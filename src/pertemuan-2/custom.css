@@ -1,0 +1,156 @@
+/* BODY */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* TITLE */
+h1 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* SUB TITLE */
+h2 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 4px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* SECTION */
+.container > div {
+  margin-bottom: 18px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* PROFIL CARD */
+.profil-card {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+/* FOTO */
+.foto-profil {
+  width: 110px;
+  height: 120px;
+  border-radius: 10px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+/* INFO PROFIL */
+.profil-info {
+  text-align: left;
+}
+
+.profil-info h2 {
+  margin-bottom: 8px;
+}
+
+.profil-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ABOUT */
+.about p {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* LIST */
+ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+li {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* LABEL */
+strong {
+  color: #222;
+}
+
+/* TOP SECTION (PROFIL + KONTAK) */
+.top-section {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* PROFIL LEBIH BESAR */
+.profil {
+  flex: 3;
+}
+
+/* KONTAK */
+.kontak {
+  flex: 1;
+  max-width: 240px;
+  text-align: left;
+}
+
+/* KONTAK ITEM */
+.kontak-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.kontak-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ROW PENDIDIKAN + SKILL */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.row > div {
+  flex: 1;
+}
+
+/* BIAR LIST RAPI */
+.pendidikan ul,
+.skill ul {
+  padding-left: 18px;
+  text-align: left;
+  max-width: 300px;
+  margin: auto;
+}
+
+/* LIST SPACING */
+.pendidikan li,
+.skill li {
+  padding-left: 2px;
+}
