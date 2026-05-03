@@ -1,0 +1,463 @@
+[
+  {
+    "id": 1,
+    "name": "Home Cleaning Service",
+    "category": "Household",
+    "price": 150000,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952",
+    "provider": {
+      "name": "CleanPro",
+      "contact": "08123456789",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon", "Wed", "Fri"],
+      "time": "08:00 - 17:00",
+      "duration": "2 hours"
+    },
+    "details": {
+      "description": "Professional home cleaning",
+      "toolsIncluded": true,
+      "warranty": "1 day"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Laundry Service",
+    "category": "Household",
+    "price": 7000,
+    "rating": 4.2,
+    "image": "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1",
+    "provider": {
+      "name": "FreshWash",
+      "contact": "08234567890",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "07:00 - 21:00",
+      "duration": "1 day"
+    },
+    "details": {
+      "description": "Fast laundry service",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 3,
+    "name": "AC Repair Service",
+    "category": "Technical",
+    "price": 200000,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789",
+    "provider": {
+      "name": "CoolFix",
+      "contact": "0811111111",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon", "Sat"],
+      "time": "09:00 - 18:00",
+      "duration": "3 hours"
+    },
+    "details": {
+      "description": "AC repair & maintenance",
+      "toolsIncluded": true,
+      "warranty": "7 days"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Car Wash Service",
+    "category": "Automotive",
+    "price": 50000,
+    "rating": 4.3,
+    "image": "https://images.unsplash.com/photo-1607860108855-64acf2078ed9",
+    "provider": {
+      "name": "AutoClean",
+      "contact": "0822222222",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "08:00 - 20:00",
+      "duration": "1 hour"
+    },
+    "details": {
+      "description": "Full car wash",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Computer Repair",
+    "category": "Technical",
+    "price": 250000,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f",
+    "provider": {
+      "name": "TechFix",
+      "contact": "0833333333",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon-Fri"],
+      "time": "10:00 - 18:00",
+      "duration": "2-5 hours"
+    },
+    "details": {
+      "description": "Laptop & PC repair",
+      "toolsIncluded": true,
+      "warranty": "14 days"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Haircut Service",
+    "category": "Beauty",
+    "price": 40000,
+    "rating": 4.4,
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+    "provider": {
+      "name": "BarberPro",
+      "contact": "0844444444",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "09:00 - 21:00",
+      "duration": "45 minutes"
+    },
+    "details": {
+      "description": "Modern haircut",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Makeup Artist",
+    "category": "Beauty",
+    "price": 300000,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
+    "provider": {
+      "name": "GlowUp",
+      "contact": "0855555555",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["By Appointment"],
+      "time": "Flexible",
+      "duration": "2 hours"
+    },
+    "details": {
+      "description": "Professional makeup",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Plumbing Service",
+    "category": "Technical",
+    "price": 120000,
+    "rating": 4.3,
+    "image": "https://images.unsplash.com/photo-1581574201161-cbcb5b44b5c5",
+    "provider": {
+      "name": "PipeFix",
+      "contact": "0866666666",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon-Sat"],
+      "time": "08:00 - 17:00",
+      "duration": "2 hours"
+    },
+    "details": {
+      "description": "Fix water pipes",
+      "toolsIncluded": true,
+      "warranty": "3 days"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Electrician Service",
+    "category": "Technical",
+    "price": 130000,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1581091870627-3b1efbb9d6c7",
+    "provider": {
+      "name": "VoltFix",
+      "contact": "0877777777",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon-Sat"],
+      "time": "09:00 - 18:00",
+      "duration": "2 hours"
+    },
+    "details": {
+      "description": "Electrical repair",
+      "toolsIncluded": true,
+      "warranty": "5 days"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Catering Service",
+    "category": "Food",
+    "price": 35000,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1555244162-803834f70033",
+    "provider": {
+      "name": "FoodFest",
+      "contact": "0888888888",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "Flexible",
+      "duration": "Event based"
+    },
+    "details": {
+      "description": "Event catering",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+
+  {
+    "id": 11,
+    "name": "Photography Service",
+    "category": "Creative",
+    "price": 500000,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "provider": {
+      "name": "PhotoPro",
+      "contact": "0899999999",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["By Appointment"],
+      "time": "Flexible",
+      "duration": "3 hours"
+    },
+    "details": {
+      "description": "Event photography",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Videography Service",
+    "category": "Creative",
+    "price": 700000,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+    "provider": {
+      "name": "VideoPro",
+      "contact": "0810101010",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["By Appointment"],
+      "time": "Flexible",
+      "duration": "4 hours"
+    },
+    "details": {
+      "description": "Professional video",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Massage Therapy",
+    "category": "Health",
+    "price": 120000,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03",
+    "provider": {
+      "name": "RelaxCare",
+      "contact": "0820202020",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "10:00 - 22:00",
+      "duration": "1 hour"
+    },
+    "details": {
+      "description": "Body massage",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Personal Trainer",
+    "category": "Health",
+    "price": 150000,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1599058917212-d750089bc07e",
+    "provider": {
+      "name": "FitCoach",
+      "contact": "0830303030",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon-Fri"],
+      "time": "06:00 - 10:00",
+      "duration": "1 hour"
+    },
+    "details": {
+      "description": "Fitness training",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Bike Repair",
+    "category": "Automotive",
+    "price": 60000,
+    "rating": 4.3,
+    "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
+    "provider": {
+      "name": "BikeFix",
+      "contact": "0840404040",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "08:00 - 17:00",
+      "duration": "1 hour"
+    },
+    "details": {
+      "description": "Bike maintenance",
+      "toolsIncluded": true,
+      "warranty": "3 days"
+    }
+  },
+  {
+    "id": 16,
+    "name": "House Painting",
+    "category": "Household",
+    "price": 1000000,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+    "provider": {
+      "name": "PaintPro",
+      "contact": "0850505050",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon-Sat"],
+      "time": "08:00 - 17:00",
+      "duration": "2 days"
+    },
+    "details": {
+      "description": "Interior & exterior painting",
+      "toolsIncluded": true,
+      "warranty": "30 days"
+    }
+  },
+  {
+    "id": 17,
+    "name": "Gardening Service",
+    "category": "Household",
+    "price": 90000,
+    "rating": 4.4,
+    "image": "https://images.unsplash.com/photo-1524594227088-7f3e94b84d6e",
+    "provider": {
+      "name": "GreenCare",
+      "contact": "0860606060",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Mon-Fri"],
+      "time": "07:00 - 15:00",
+      "duration": "2 hours"
+    },
+    "details": {
+      "description": "Garden maintenance",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 18,
+    "name": "Moving Service",
+    "category": "Logistics",
+    "price": 300000,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1581578017421-0c3d8c8a7b9c",
+    "provider": {
+      "name": "MoveFast",
+      "contact": "0870707070",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "Flexible",
+      "duration": "4-6 hours"
+    },
+    "details": {
+      "description": "House moving service",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Delivery Service",
+    "category": "Logistics",
+    "price": 15000,
+    "rating": 4.2,
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d",
+    "provider": {
+      "name": "QuickSend",
+      "contact": "0880808080",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["Daily"],
+      "time": "24 hours",
+      "duration": "Same day"
+    },
+    "details": {
+      "description": "Fast delivery",
+      "toolsIncluded": false,
+      "warranty": "No"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Event Organizer",
+    "category": "Creative",
+    "price": 2000000,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1505236858219-8359eb29e329",
+    "provider": {
+      "name": "EventPro",
+      "contact": "0890909090",
+      "location": "Pekanbaru"
+    },
+    "schedule": {
+      "availableDays": ["By Appointment"],
+      "time": "Flexible",
+      "duration": "Event based"
+    },
+    "details": {
+      "description": "Full event management",
+      "toolsIncluded": true,
+      "warranty": "No"
+    }
+  }
+]
