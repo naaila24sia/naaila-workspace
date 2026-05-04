@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Andi Perkasa",
+    "petsCount": 2,
+    "pets": ["Miko", "Kuro"],
+    "phone": "+62 812-3456-7890",
+    "email": "andi@mail.com",
+    "initial": "AP",
+    "color": "bg-blue-100 text-blue-600"
+  },
+  {
+    "id": 2,
+    "name": "Budi Santoso",
+    "petsCount": 1,
+    "pets": ["Bruno"],
+    "phone": "+62 812-9876-5432",
+    "email": "budi@mail.com",
+    "initial": "BS",
+    "color": "bg-purple-100 text-purple-600"
+  },
+  {
+    "id": 3,
+    "name": "Siti Aminah",
+    "petsCount": 3,
+    "pets": ["Snowy", "Cloudy", "Marshmello"],
+    "phone": "+62 813-1122-3344",
+    "email": "siti@mail.com",
+    "initial": "SA",
+    "color": "bg-green-100 text-green-600"
+  },
+  {
+    "id": 4,
+    "name": "Citra Kirana",
+    "petsCount": 2,
+    "pets": ["Luna", "Bella"],
+    "phone": "+62 815-5566-7788",
+    "email": "citra@mail.com",
+    "initial": "CK",
+    "color": "bg-pink-100 text-pink-600"
+  },
+  {
+    "id": 5,
+    "name": "Doni Setiawan",
+    "petsCount": 1,
+    "pets": ["Rex"],
+    "phone": "+62 819-0011-2233",
+    "email": "doni@mail.com",
+    "initial": "DS",
+    "color": "bg-yellow-100 text-yellow-600"
+  },
+  {
+    "id": 6,
+    "name": "Eka Mahendra",
+    "petsCount": 1,
+    "pets": ["Cookie"],
+    "phone": "+62 877-4455-6677",
+    "email": "eka@mail.com",
+    "initial": "EM",
+    "color": "bg-orange-100 text-orange-600"
+  }
+]

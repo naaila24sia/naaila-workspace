@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "pet": "Miko",
+    "type": "Cat",
+    "breed": "British Shorthair",
+    "age": "2 years old",
+    "gender": "Male",
+    "owner": "Andi Perkasa",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+    "last_visit": "12 May 2026",
+    "status": "Healthy"
+  },
+  {
+    "id": 2,
+    "pet": "Bruno",
+    "type": "Dog",
+    "breed": "Golden Retriever",
+    "age": "3 years old",
+    "gender": "Male",
+    "owner": "Budi Santoso",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    "last_visit": "10 May 2026",
+    "status": "Under Treatment"
+  },
+  {
+    "id": 3,
+    "pet": "Snowy",
+    "type": "Rabbit",
+    "breed": "Angora",
+    "age": "1 year old",
+    "gender": "Female",
+    "owner": "Santi Putri",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616444.png",
+    "last_visit": "14 May 2026",
+    "status": "Healthy"
+  },
+  {
+    "id": 4,
+    "pet": "Luna",
+    "type": "Cat",
+    "breed": "Persian",
+    "age": "5 months",
+    "gender": "Female",
+    "owner": "Citra Kirana",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616554.png",
+    "last_visit": "01 May 2026",
+    "status": "Recovery"
+  },
+  {
+    "id": 5,
+    "pet": "Rex",
+    "type": "Dog",
+    "breed": "German Shepherd",
+    "age": "4 years old",
+    "gender": "Male",
+    "owner": "Doni Setiawan",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616560.png",
+    "last_visit": "20 April 2026",
+    "status": "Healthy"
+  },
+  {
+    "id": 6,
+    "pet": "Cookie",
+    "type": "Hamster",
+    "breed": "Syrian",
+    "age": "8 months",
+    "gender": "Female",
+    "owner": "Eka Mahendra",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616614.png",
+    "last_visit": "05 May 2026",
+    "status": "Under Treatment"
+  },
+  {
+    "id": 7,
+    "pet": "Oliver",
+    "type": "Cat",
+    "breed": "Maine Coon",
+    "age": "3 years old",
+    "gender": "Male",
+    "owner": "Fanny Wijaya",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+    "last_visit": "28 April 2026",
+    "status": "Healthy"
+  },
+  {
+    "id": 8,
+    "pet": "Bella",
+    "type": "Dog",
+    "breed": "Poodle",
+    "age": "2 years old",
+    "gender": "Female",
+    "owner": "Gina Rizky",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    "last_visit": "02 May 2026",
+    "status": "Healthy"
+  },
+  {
+    "id": 9,
+    "pet": "Bubbles",
+    "type": "Fish",
+    "breed": "Goldfish",
+    "age": "1 year old",
+    "gender": "Unknown",
+    "owner": "Hendra Kurnia",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616524.png",
+    "last_visit": "15 April 2026",
+    "status": "Recovery"
+  },
+  {
+    "id": 10,
+    "pet": "Nemo",
+    "type": "Bird",
+    "breed": "Parrot",
+    "age": "5 years old",
+    "gender": "Male",
+    "owner": "Indra Jaya",
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616528.png",
+    "last_visit": "07 May 2026",
+    "status": "Healthy"
+  }
+]
