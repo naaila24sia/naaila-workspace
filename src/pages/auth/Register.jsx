@@ -3,73 +3,77 @@ import { Link } from "react-router-dom";
 
 export default function Register() {
   return (
-    <div className="font-barlow">
-      {/* Welcome Message */}
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-poppins font-black text-text-main uppercase tracking-tight">
-          Join the Pack <span className="text-primary">✨</span>
+    <div className="font-body">
+
+      {/* TITLE */}
+      <div className="mb-6">
+        <h2 className="text-[28px] font-semibold text-text-main">
+          Create Account
         </h2>
-        <p className="text-[11px] font-bold text-text-soft uppercase tracking-widest mt-1">
-          Create New Admin Account
+
+        <p className="text-sm text-text-soft mt-2">
+          Join the platform and manage your veterinary system.
         </p>
       </div>
 
-      <form onSubmit={(e) => e.preventDefault()}>
-        {/* Email Input */}
-        <div className="mb-5">
-          <label className="block text-[10px] font-black text-text-soft uppercase tracking-[0.15em] mb-2 ml-1">
+      <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+
+        {/* EMAIL */}
+        <div>
+          <label className="block text-xs text-text-soft mb-2">
             Email Address
           </label>
+
           <input
             type="email"
-            id="email"
-            className="w-full px-5 py-3 bg-bg-main border border-border rounded-2xl text-sm font-bold text-text-main outline-none focus:ring-4 focus:ring-primary-soft focus:border-primary transition-all placeholder-text-soft/30"
             placeholder="new.admin@anabul.com"
+            className="input focus:ring-accent"
           />
         </div>
 
-        {/* Password Input */}
-        <div className="mb-5">
-          <label className="block text-[10px] font-black text-text-soft uppercase tracking-[0.15em] mb-2 ml-1">
-            Create Password
+        {/* PASSWORD */}
+        <div>
+          <label className="block text-xs text-text-soft mb-2">
+            Password
           </label>
+
           <input
             type="password"
-            id="password"
-            className="w-full px-5 py-3 bg-bg-main border border-border rounded-2xl text-sm font-bold text-text-main outline-none focus:ring-4 focus:ring-primary-soft focus:border-primary transition-all placeholder-text-soft/30"
             placeholder="••••••••"
+            className="input focus:ring-accent"
           />
         </div>
 
-        {/* Confirm Password Input */}
-        <div className="mb-8">
-          <label className="block text-[10px] font-black text-text-soft uppercase tracking-[0.15em] mb-2 ml-1">
+        {/* CONFIRM PASSWORD */}
+        <div>
+          <label className="block text-xs text-text-soft mb-2">
             Confirm Password
           </label>
+
           <input
             type="password"
-            id="confirmPassword"
-            className="w-full px-5 py-3 bg-bg-main border border-border rounded-2xl text-sm font-bold text-text-main outline-none focus:ring-4 focus:ring-primary-soft focus:border-primary transition-all placeholder-text-soft/30"
             placeholder="••••••••"
+            className="input focus:ring-accent"
           />
         </div>
 
-        {/* Submit Button */}
+        {/* BUTTON */}
         <button
           type="submit"
-          className="w-full bg-primary hover:bg-primary/90 text-white font-black py-4 px-4 rounded-2xl transition-all duration-300 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-3"
+          className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition"
         >
           <FaUserPlus /> Register Account
         </button>
       </form>
-      
-      {/* Back to Login Link */}
-      <p className="text-center mt-8 text-[11px] font-bold text-text-soft uppercase tracking-wider">
-        Already have an account? {" "}
-        <Link to="/login" className="text-primary font-black hover:underline decoration-2 underline-offset-4">
-          Login Here
+
+      {/* LOGIN LINK */}
+      <p className="text-center mt-6 text-sm text-text-soft">
+        Already have an account?{" "}
+        <Link to="/" className="text-accent font-semibold hover:underline">
+          Login here
         </Link>
       </p>
+
     </div>
   );
 }

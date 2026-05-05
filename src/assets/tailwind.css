@@ -1,17 +1,12 @@
 @import "tailwindcss";
 
-/* 1. PENDAFTARAN FONT LOKAL (Plus Jakarta Sans & Inter) */
+/*  FONT  */
 
-/* Plus Jakarta Sans - Untuk Judul & Heading */
+/* Heading - Plus Jakarta Sans */
 @font-face {
     font-family: 'Plus Jakarta Sans';
     src: url('/fonts/PlusJakartaSans-Regular.ttf') format('truetype');
     font-weight: 400;
-}
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('/fonts/PlusJakartaSans-Medium.ttf') format('truetype');
-    font-weight: 500;
 }
 @font-face {
     font-family: 'Plus Jakarta Sans';
@@ -21,10 +16,10 @@
 @font-face {
     font-family: 'Plus Jakarta Sans';
     src: url('/fonts/PlusJakartaSans-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
+    font-weight: 700;
 }
 
-/* Inter - Untuk Body & Tabel */
+/* Body - Inter */
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter_24pt-Regular.ttf') format('truetype');
@@ -41,32 +36,121 @@
     font-weight: 700;
 }
 
-@theme {
-       
-    --font-barlow: 'Inter', sans-serif;          
-    --font-poppins: 'Plus Jakarta Sans', sans-serif; 
+/*  THEME  */
 
-    /* COLORS (Tetap sama) */
-    --color-bg-main: #F3F2F7; 
-    --color-bg-card: #ffffff;
-    --color-text-main: #2D2D44;
-    --color-text-soft: #8E8EA1;
-    --color-border: #E8E7F0;
-    --color-primary: #8B5CF6;
-    --color-primary-soft: #F0EBFF;
-    --color-accent-bg: #FFF9E5;
-    --color-accent-text: #D97706;
-    --color-success-bg: #E6FFFA;
-    --color-success-text: #0D9488;
-    --color-danger: #FF6B6B;
+@theme {
+
+    /* FONT */
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /*  COLORS  */
+
+    /* Primary (Dashboard - Hijau) */
+    --color-primary: #A3D65C;
+    --color-primary-hover: #8BC34A;
+
+    /* Secondary (Biru) */
+    --color-secondary: #4DA3FF;
+    --color-secondary-light: #6EC1FF;
+    --color-secondary-dark: #2F80ED;
+
+    /* Auth Accent (Orange Login) */
+    --color-accent: #E76445;
+    --color-accent-hover: #D4553A;
+
+    /* Neutral */
+    --color-bg-main: #F5F7FA;
+    --color-bg-card: #FFFFFF;
+    --color-border: #E0E0E0;
+    --color-text-main: #333333;
+    --color-text-soft: #BDBDBD;
+    --color-dark: #1F1F1F;
+
+    /* Semantic */
+    --color-success: #27AE60;
+    --color-success-soft: #6FCF97;
+
+    --color-warning: #F2C94C;
+    --color-warning-dark: #F2994A;
+
+    --color-error: #EB5757;
+    --color-error-soft: #FF6B6B;
 }
+
+/*  BASE  */
 
 body {
-    /* Menggunakan font Inter secara default untuk seluruh web */
-    @apply font-barlow bg-bg-main text-text-main antialiased;
+    @apply font-body bg-bg-main text-text-main antialiased;
 }
 
-/* Custom Utility */
+/*  TYPOGRAPHY  */
+
+@utility h1 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+@utility h2 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+@utility h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+@utility body-text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@utility small-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+/*  COMPONENT STYLE  */
+
+@utility card {
+    @apply bg-bg-card rounded-2xl shadow-soft p-4;
+}
+
+@utility button-primary {
+    @apply bg-primary text-white rounded-xl px-4 py-2 font-semibold hover:bg-primary-hover transition;
+}
+
+@utility button-accent {
+    @apply bg-accent text-white rounded-xl px-4 py-2 font-semibold hover:bg-accent-hover transition;
+}
+
+@utility input {
+    @apply border border-border rounded-xl px-3 py-2 w-full outline-none focus:ring-2 focus:ring-primary;
+}
+
+@utility badge-success {
+    @apply bg-success-soft text-success px-3 py-1 rounded-full text-xs font-medium;
+}
+
+@utility badge-warning {
+    @apply bg-warning text-warning-dark px-3 py-1 rounded-full text-xs font-medium;
+}
+
+@utility badge-error {
+    @apply bg-error-soft text-error px-3 py-1 rounded-full text-xs font-medium;
+}
+
+/* SHADOW */
+
 @utility shadow-soft {
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
+              0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
