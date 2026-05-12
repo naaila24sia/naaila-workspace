@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { MdOutlinePets, MdOpenInNew } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import ownersData from "../data/owners.json";
+import ownersData from "../data/Owners.json";
 
 export default function Owners() {
   // 2. State untuk query pencarian
