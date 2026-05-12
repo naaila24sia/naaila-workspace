@@ -2,7 +2,7 @@ import { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { FaPlus, FaFilter, FaEllipsisV, FaChevronDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import appointmentsData from "../data/appointments.json";
+import appointmentsData from "../data/Appointments.json";
 
 export default function Appointments() {
   const [statusFilter, setStatusFilter] = useState("All Status");

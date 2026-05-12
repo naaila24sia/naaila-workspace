@@ -3,7 +3,7 @@ import PageHeader from "../components/PageHeader";
 import { FaPlus, FaSearch, FaEllipsisV, FaVenus, FaMars } from "react-icons/fa";
 import { MdOutlinePets, MdOutlineHistory } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import petsData from "../data/pets.json";
+import petsData from "../data/Pets.json";
 
 export default function Pets() {
   const [searchQuery, setSearchQuery] = useState("");
