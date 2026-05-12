@@ -19,6 +19,10 @@ function App() {
   const AddPet = lazy(() => import("./pages/AddPets"));
   const AddOwner = lazy(() => import("./pages/AddOwners"));
 
+  const AppointmentDetail = lazy(() => import("./pages/AppointmentDetail"));
+  const PetDetail = lazy(() => import("./pages/PetDetail"));
+  const OwnerDetail = lazy(() => import("./pages/OwnerDetail"));
+
   //Layout
   const MainLayout = lazy(() => import("./layouts/MainLayout"));
   const AuthLayout = lazy(() => import("./layouts/AuthLayout"));
@@ -41,6 +45,10 @@ function App() {
           <Route path="/appointments/add" element={<AddAppointments />} />
           <Route path="/pets/add" element={<AddPet />} />
           <Route path="/owners/add" element={<AddOwner />} />
+
+          <Route path="/appointments/:id" element={<AppointmentDetail />} />
+          <Route path="/petdetail/:id" element={<PetDetail />} />
+          <Route path="/ownerdetail/:id" element={<OwnerDetail />} />
 
           <Route path="/400" element={<Error400 />} />
           <Route path="/401" element={<Error401 />} />
