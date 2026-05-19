@@ -1,127 +1,151 @@
 import { MdDashboard } from "react-icons/md";
-import { FaPaw, FaCalendarCheck, FaUserAlt, FaPlus, FaBan, FaLock, FaTimesCircle } from "react-icons/fa";
+
+import {
+  FaPaw,
+  FaCalendarCheck,
+  FaUserAlt,
+  FaPlus,
+  FaBan,
+  FaLock,
+  FaTimesCircle,
+  FaClipboardList,
+  FaChartPie,
+} from "react-icons/fa";
+
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   const menuClass = ({ isActive }) =>
-    `flex cursor-pointer items-center rounded-xl p-4 space-x-2 transition-all
-        ${
-          isActive
-            ? "text-primary bg-primary-soft font-bold shadow-sm"
-            : "text-text-soft hover:text-primary hover:bg-primary-soft/50"
-        }`;
+    `flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-medium transition-all
+    ${
+      isActive
+        ? "bg-primary text-dark shadow-soft"
+        : "text-text-soft hover:bg-bg-main hover:text-text-main"
+    }`;
 
   return (
-    <div 
-      className="sticky top-0 flex h-screen w-80 flex-col bg-bg-card px-6 py-6 border-r border-border shadow-md overflow-hidden"
-    >
-      {/* Logo Section */}
-      <div className="flex flex-col px-2">
-        <span className="font-poppins text-[36px] font-extrabold leading-tight text-text-main">
-          VetCare<b className="text-primary">.</b>
-        </span>
-        <span className="font-bold text-text-soft/60 text-xs uppercase tracking-widest">
-          Veterinary Admin
-        </span>
-      </div>
+    <aside className="sticky top-0 h-screen w-[250px] bg-dark px-5 py-6 flex flex-col justify-between overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {/* TOP */}
+      <div>
+        {/* LOGO */}
+        <div className="mb-8">
+          <h1 className="font-heading text-3xl font-bold text-white">
+            Vet<span className="text-primary">Care</span>
+          </h1>
 
-      {/* Menu Section */}
-      <div className="mt-8 flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <ul className="space-y-1.5">
-          
-          <li>
-            <NavLink to="/" className={menuClass}>
-              <MdDashboard className="mr-4 text-xl" />
-              <span>Dashboard</span>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/appointments" className={menuClass}>
-              <FaCalendarCheck className="mr-4 text-xl" />
-              <span>Appointments</span>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/pets" className={menuClass}>
-              <FaPaw className="mr-4 text-xl" />
-              <span>Pets</span>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/owners" className={menuClass}>
-              <FaUserAlt className="mr-4 text-xl" />
-              <span>Pet Owners</span>
-            </NavLink>
-          </li>
-
-          {/* LABEL SYSTEM */}
-          <li className="pt-6 pb-2 px-4">
-            <p className="text-[11px] font-extrabold uppercase tracking-[2px] text-text-soft/40">
-              System
-            </p>
-          </li>
-
-          <li>
-            <NavLink to="/400" className={menuClass}>
-              <FaBan className="mr-4 text-xl" />
-              <span>Error 400</span>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/401" className={menuClass}>
-              <FaLock className="mr-4 text-xl" />
-              <span>Error 401</span>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/403" className={menuClass}>
-              <FaTimesCircle className="mr-4 text-xl" />
-              <span>Error 403</span>
-            </NavLink>
-          </li>
-
-        </ul>
-      </div>
-
-      {/* Footer Section */}
-      <div className="mt-auto pt-4">
-
-        {/* PROMO CARD - Menggunakan Gradient Primary-Paw */}
-        <div className="bg-gradient-to-br from-primary to-paw px-5 py-5 rounded-3xl shadow-lg shadow-primary/20 mb-6 flex items-center relative overflow-hidden">
-          
-          <div className="z-10 w-2/3">
-            <span className="text-white text-[11px] font-medium leading-tight block">
-              Manage your clinic services easily!
-            </span>
-
-            <div className="flex justify-center items-center p-2.5 mt-4 bg-white rounded-xl space-x-2 shadow-sm cursor-pointer hover:scale-105 transition-transform">
-              <FaPlus className="text-primary text-[10px]" />
-              <span className="text-primary font-bold text-[11px]">
-                Add Service
-              </span>
-            </div>
-          </div>
-
-          {/* Icon Paw Transparan di Background agar tidak 'jelek' */}
-          <FaPaw className="absolute -right-4 -bottom-4 text-white/10 text-7xl rotate-12" />
-        </div>
-
-        {/* Footer Text */}
-        <div className="flex flex-col mb-2 px-2">
-          <span className="font-bold text-text-soft text-[10px] uppercase tracking-wider">
-            VetCare Dashboard
-          </span>
-          <p className="font-medium text-text-soft/50 text-[10px]">
-            &copy; 2026 All Rights Reserved
+          <p className="small-text text-white/40 mt-1 uppercase tracking-widest">
+            Veterinary Admin
           </p>
         </div>
 
+        {/* BRANCH CARD */}
+        <div className="bg-white/5 border border-white/5 rounded-2xl p-4 mb-8">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="body-text text-white font-semibold">NY Branch</p>
+
+              <p className="small-text text-white/40">Admin</p>
+            </div>
+
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-dark">
+              <FaPaw />
+            </div>
+          </div>
+        </div>
+
+        {/* MENU */}
+        <div className="space-y-1">
+          {/* LABEL */}
+          <p className="text-[10px] uppercase tracking-[2px] text-white/30 font-bold px-4 mb-2">
+            Analytics
+          </p>
+
+          <NavLink to="/" className={menuClass}>
+            <MdDashboard />
+            Dashboard
+          </NavLink>
+
+          <NavLink to="/reports" className={menuClass}>
+            <FaChartPie />
+            Reports
+          </NavLink>
+
+          {/* LABEL */}
+          <p className="text-[10px] uppercase tracking-[2px] text-white/30 font-bold px-4 mt-6 mb-2">
+            Veterinary
+          </p>
+
+          <NavLink to="/appointments" className={menuClass}>
+            <FaCalendarCheck />
+            Appointments
+          </NavLink>
+
+          <NavLink to="/pets" className={menuClass}>
+            <FaPaw />
+            Pets
+          </NavLink>
+
+          <NavLink to="/owners" className={menuClass}>
+            <FaUserAlt />
+            Pet Owners
+          </NavLink>
+
+          <NavLink to="/records" className={menuClass}>
+            <FaClipboardList />
+            Medical Records
+          </NavLink>
+
+          {/* LABEL */}
+          <p className="text-[10px] uppercase tracking-[2px] text-white/30 font-bold px-4 mt-6 mb-2">
+            System
+          </p>
+
+          <NavLink to="/400" className={menuClass}>
+            <FaBan />
+            Error 400
+          </NavLink>
+
+          <NavLink to="/401" className={menuClass}>
+            <FaLock />
+            Error 401
+          </NavLink>
+
+          <NavLink to="/403" className={menuClass}>
+            <FaTimesCircle />
+            Error 403
+          </NavLink>
+        </div>
       </div>
-    </div>
+
+      {/* BOTTOM CARD */}
+      <div>
+        <div className="bg-primary rounded-3xl p-5 relative overflow-hidden">
+          <div className="relative z-10">
+            <p className="text-dark text-sm font-semibold leading-relaxed">
+              Manage your veterinary services easily.
+            </p>
+
+            <button className="mt-5 bg-white w-full py-3 rounded-2xl flex items-center justify-center gap-2 text-sm font-semibold text-dark hover:scale-[1.02] transition">
+              <FaPlus className="text-xs" />
+              Add Service
+            </button>
+          </div>
+
+          {/* PAW BG */}
+          <FaPaw className="absolute -right-5 -bottom-5 text-dark/10 text-8xl rotate-12" />
+        </div>
+
+        {/* FOOTER */}
+        <div className="mt-5 px-2">
+          <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold">
+            VetCare Dashboard
+          </p>
+
+          <p className="text-[10px] text-white/20 mt-1">
+            © 2026 All Rights Reserved
+          </p>
+        </div>
+      </div>
+    </aside>
   );
 }

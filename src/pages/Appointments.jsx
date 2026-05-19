@@ -2,6 +2,7 @@ import { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { FaPlus, FaFilter, FaEllipsisV, FaChevronDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import Badge from "../components/Badge";
 import appointmentsData from "../data/Appointments.json";
 
 export default function Appointments() {
@@ -124,20 +125,7 @@ export default function Appointments() {
                     </td>
 
                     <td className="px-6 py-5">
-                      <div
-                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm ${
-                          item.status?.toLowerCase() === "done"
-                            ? "bg-success-bg border-success-text/10 text-success-text"
-                            : "bg-accent-bg border-accent-text/10 text-accent-text"
-                        }`}
-                      >
-                        <div
-                          className={`w-1.5 h-1.5 rounded-full ${item.status?.toLowerCase() === "done" ? "bg-success-text" : "bg-accent-text"}`}
-                        ></div>
-                        <span className="text-[10px] font-black uppercase tracking-widest">
-                          {item.status}
-                        </span>
-                      </div>
+                      <Badge status={item.status} />
                     </td>
 
                     <td className="px-8 py-5 text-right">
