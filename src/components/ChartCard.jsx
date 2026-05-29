@@ -1,9 +1,7 @@
 export default function ChartCard() {
   return (
     <div className="bg-secondary rounded-3xl p-5 text-white h-[340px] relative overflow-hidden shadow-soft">
-
       <div className="flex items-center justify-between mb-5">
-
         <h3 className="font-heading text-xl font-semibold">
           Total Animals Today
         </h3>
@@ -13,16 +11,21 @@ export default function ChartCard() {
         </button>
       </div>
 
-      <h1 className="text-6xl font-bold">
-        38
-      </h1>
+      <h1 className="text-6xl font-bold">38</h1>
 
       {/* GRAPH */}
-      <div className="absolute bottom-0 left-0 w-full h-44 bg-white/10 rounded-t-[40px]"></div>
+      <div className="absolute bottom-0 left-0 w-full h-44 bg-white/10 rounded-t-[40px]">
+        <svg className="w-full h-full" viewBox="0 0 400 150" fill="none">
+          <path
+            d="M20 120 C80 80, 140 100, 200 60 S320 90, 380 40"
+            stroke="white"
+            strokeWidth="3"
+            fill="none"
+          />
 
-      <div className="absolute bottom-24 left-10 right-10 h-[2px] bg-white/40"></div>
-
-      <div className="absolute bottom-[88px] left-1/2 w-4 h-4 bg-white rounded-full border-4 border-secondary"></div>
+          <circle cx="200" cy="60" r="6" fill="white" />
+        </svg>
+      </div>
     </div>
   );
 }

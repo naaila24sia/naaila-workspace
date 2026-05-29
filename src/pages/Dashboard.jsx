@@ -14,7 +14,7 @@ export default function Dashboard() {
         {/* WELCOME */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="h1">Welcome back, Jenny 👋</h1>
+            <h1 className="h1">Welcome back, Dr Naaila 👋</h1>
 
             <p className="body-text text-text-soft mt-1">
               Your clinic is working in the mode:
