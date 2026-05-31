@@ -2,6 +2,23 @@ import { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { FaPlus, FaFilter, FaEllipsisV, FaChevronDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { MoreVertical } from "lucide-react";
 import Badge from "../components/Badge";
 import appointmentsData from "../data/Appointments.json";
 
@@ -129,9 +146,68 @@ export default function Appointments() {
                     </td>
 
                     <td className="px-8 py-5 text-right">
-                      <button className="p-2.5 bg-bg-main hover:bg-primary hover:text-white rounded-xl text-text-soft transition-all shadow-sm">
-                        <FaEllipsisV size={12} />
-                      </button>
+                      <DropdownMenu>
+
+                        <DropdownMenuTrigger asChild>
+                          <button className="inline-flex items-center justify-center w-8 h-8 bg-bg-main hover:bg-border/40 text-text-soft hover:text-text-main rounded-xl transition-all shadow-sm outline-none cursor-pointer">
+                            <MoreVertical size={12} />
+                          </button>
+                        </DropdownMenuTrigger>
+
+                        <DropdownMenuContent
+                          align="end"
+                          className="w-44 rounded-xl border border-border bg-bg-card p-1 shadow-soft font-body outline-none"
+                        >
+                          <DropdownMenuItem
+                            asChild
+                            className="cursor-pointer text-text-main text-xs font-semibold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main focus:text-text-main outline-none transition-colors"
+                          >
+                            <NavLink to={`/appointments/${item.id}`}>
+                              View Detail
+                            </NavLink>
+                          </DropdownMenuItem>
+
+                          <DropdownMenuItem className="cursor-pointer text-text-main text-xs font-semibold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main focus:text-text-main outline-none transition-colors">
+                            Edit Appointment
+                          </DropdownMenuItem>
+
+                          <Dialog>
+    <DialogTrigger asChild>
+      <button className="w-full text-left cursor-pointer text-error text-xs font-bold px-3 py-2 rounded-lg hover:bg-error-soft/10 focus:bg-error-soft/10 focus:text-error outline-none transition-colors">
+        Delete
+      </button>
+    </DialogTrigger>
+    
+    {/* Tampilan Pop-up Konfirmasi Hapus */}
+    <DialogContent className="rounded-[2rem] border border-border bg-white p-6 max-w-sm mx-auto font-barlow text-center shadow-2xl">
+      <DialogHeader className="flex flex-col items-center justify-center text-center">
+        <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-500 mb-3 border border-red-100">
+          ⚠️
+        </div>
+        <DialogTitle className="font-poppins font-black text-text-main text-xl uppercase tracking-tight">
+          Delete Appointment?
+        </DialogTitle>
+        <DialogDescription className="text-xs text-text-soft/80 font-medium mt-2 max-w-[260px]">
+          Are you sure you want to delete <span className="font-bold text-text-main">{item.pet}</span>'s appointment? This action cannot be undone.
+        </DialogDescription>
+      </DialogHeader>
+      
+      <DialogFooter className="mt-6 flex gap-2 justify-center w-full sm:justify-center">
+        <DialogClose asChild>
+          <button className="rounded-xl border border-border text-[11px] font-black uppercase px-4 py-2.5 hover:bg-bg-main transition-all text-text-soft cursor-pointer">
+            Cancel
+          </button>
+        </DialogClose>
+        <DialogClose asChild>
+          <button className="rounded-xl bg-red-500 hover:bg-red-600 text-white text-[11px] font-black uppercase px-4 py-2.5 shadow-md transition-all cursor-pointer">
+            Yes, Delete
+          </button>
+        </DialogClose>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </td>
                   </tr>
                 ))

@@ -2,8 +2,8 @@ export default function SubmitButton({
   children,
   icon,
   type = "primary",
+  ...props
 }) {
-
   const buttonType = {
     primary:
       "bg-primary hover:bg-primary-hover text-white shadow-primary/20",
@@ -17,6 +17,7 @@ export default function SubmitButton({
 
   return (
     <button
+      {...props}
       className={`
         px-7 py-4
         rounded-2xl
@@ -29,13 +30,10 @@ export default function SubmitButton({
         hover:scale-105
         active:scale-95
         flex items-center gap-3
-
         ${buttonType[type]}
       `}
     >
-
       {children}
-
       {icon}
     </button>
   );
