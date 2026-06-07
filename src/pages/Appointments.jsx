@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PageHeader from "../components/PageHeader";
-import { FaPlus, FaFilter, FaEllipsisV, FaChevronDown } from "react-icons/fa";
+import { FaPlus, FaFilter, FaChevronDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import {
   DropdownMenu,
@@ -18,14 +18,25 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-import { MoreVertical } from "lucide-react";
+import { MoreVertical, CheckCircle2, Clock } from "lucide-react";
 import Badge from "../components/Badge";
 import appointmentsData from "../data/Appointments.json";
 
 export default function Appointments() {
   const [statusFilter, setStatusFilter] = useState("All Status");
+  const [appointmentsList, setAppointmentsList] = useState(appointmentsData);
 
-  const filteredAppointments = appointmentsData.filter((item) => {
+  // 2. Fungsi untuk mengubah status berdasarkan ID janji temu
+  const handleUpdateStatus = (id, newStatus) => {
+    setAppointmentsList((prevData) =>
+      prevData.map((item) =>
+        item.id === id ? { ...item, status: newStatus } : item
+      )
+    );
+  };
+
+  // Logika Filtering menggunakan data dari state lokal
+  const filteredAppointments = appointmentsList.filter((item) => {
     if (statusFilter === "All Status") return true;
     return item.status.toLowerCase() === statusFilter.toLowerCase();
   });
@@ -93,7 +104,6 @@ export default function Appointments() {
                   >
                     <td className="px-8 py-5">
                       <div className="flex items-center gap-4">
-                        {/* UKURAN DISAMAKAN: w-12 h-12 & rounded-2xl */}
                         <div className="w-12 h-12 bg-primary-soft rounded-2xl flex items-center justify-center border-2 border-white shadow-md transition-transform group-hover:scale-110 group-hover:rotate-3 overflow-hidden">
                           <img
                             src={
@@ -141,13 +151,41 @@ export default function Appointments() {
                       </p>
                     </td>
 
+                    {/* STATUS COLUMN (BISA DI-KLIK) */}
                     <td className="px-6 py-5">
-                      <Badge status={item.status} />
+                      <DropdownMenu>
+                        {/* Memicu dropdown menggunakan Badge bawaan Anda */}
+                        <DropdownMenuTrigger className="outline-none focus:outline-none active:scale-95 transition-transform">
+                          <Badge status={item.status} className="cursor-pointer" />
+                        </DropdownMenuTrigger>
+                        
+                        <DropdownMenuContent
+                          align="start"
+                          className="w-36 rounded-xl border border-border bg-white p-1 shadow-soft font-barlow outline-none"
+                        >
+                          {/* Pilihan Status Pending */}
+                          <DropdownMenuItem
+                            onClick={() => handleUpdateStatus(item.id, "Pending")}
+                            className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                          >
+                            <Clock size={14} className="text-amber-500" />
+                            Pending
+                          </DropdownMenuItem>
+
+                          {/* Pilihan Status Done */}
+                          <DropdownMenuItem
+                            onClick={() => handleUpdateStatus(item.id, "Done")}
+                            className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                          >
+                            <CheckCircle2 size={14} className="text-emerald-500" />
+                            Done
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </td>
 
                     <td className="px-8 py-5 text-right">
                       <DropdownMenu>
-
                         <DropdownMenuTrigger asChild>
                           <button className="inline-flex items-center justify-center w-8 h-8 bg-bg-main hover:bg-border/40 text-text-soft hover:text-text-main rounded-xl transition-all shadow-sm outline-none cursor-pointer">
                             <MoreVertical size={12} />
@@ -172,40 +210,43 @@ export default function Appointments() {
                           </DropdownMenuItem>
 
                           <Dialog>
-    <DialogTrigger asChild>
-      <button className="w-full text-left cursor-pointer text-error text-xs font-bold px-3 py-2 rounded-lg hover:bg-error-soft/10 focus:bg-error-soft/10 focus:text-error outline-none transition-colors">
-        Delete
-      </button>
-    </DialogTrigger>
-    
-    {/* Tampilan Pop-up Konfirmasi Hapus */}
-    <DialogContent className="rounded-[2rem] border border-border bg-white p-6 max-w-sm mx-auto font-barlow text-center shadow-2xl">
-      <DialogHeader className="flex flex-col items-center justify-center text-center">
-        <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-500 mb-3 border border-red-100">
-          ⚠️
-        </div>
-        <DialogTitle className="font-poppins font-black text-text-main text-xl uppercase tracking-tight">
-          Delete Appointment?
-        </DialogTitle>
-        <DialogDescription className="text-xs text-text-soft/80 font-medium mt-2 max-w-[260px]">
-          Are you sure you want to delete <span className="font-bold text-text-main">{item.pet}</span>'s appointment? This action cannot be undone.
-        </DialogDescription>
-      </DialogHeader>
-      
-      <DialogFooter className="mt-6 flex gap-2 justify-center w-full sm:justify-center">
-        <DialogClose asChild>
-          <button className="rounded-xl border border-border text-[11px] font-black uppercase px-4 py-2.5 hover:bg-bg-main transition-all text-text-soft cursor-pointer">
-            Cancel
-          </button>
-        </DialogClose>
-        <DialogClose asChild>
-          <button className="rounded-xl bg-red-500 hover:bg-red-600 text-white text-[11px] font-black uppercase px-4 py-2.5 shadow-md transition-all cursor-pointer">
-            Yes, Delete
-          </button>
-        </DialogClose>
-      </DialogFooter>
-    </DialogContent>
-  </Dialog>
+                            <DialogTrigger asChild>
+                              <button className="w-full text-left cursor-pointer text-error text-xs font-bold px-3 py-2 rounded-lg hover:bg-error-soft/10 focus:bg-error-soft/10 focus:text-error outline-none transition-colors">
+                                Delete
+                              </button>
+                            </DialogTrigger>
+
+                            <DialogContent className="rounded-[2rem] border border-border bg-white p-6 max-w-sm mx-auto font-barlow text-center shadow-2xl">
+                              <DialogHeader className="flex flex-col items-center justify-center text-center">
+                                <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-500 mb-3 border border-red-100">
+                                  ⚠️
+                                </div>
+                                <DialogTitle className="font-poppins font-black text-text-main text-xl uppercase tracking-tight">
+                                  Delete Appointment?
+                                </DialogTitle>
+                                <DialogDescription className="text-xs text-text-soft/80 font-medium mt-2 max-w-[260px]">
+                                  Are you sure you want to delete{" "}
+                                  <span className="font-bold text-text-main">
+                                    {item.pet}
+                                  </span>
+                                  's appointment? This action cannot be undone.
+                                </DialogDescription>
+                              </DialogHeader>
+
+                              <DialogFooter className="mt-6 flex gap-2 justify-center w-full sm:justify-center">
+                                <DialogClose asChild>
+                                  <button className="rounded-xl border border-border text-[11px] font-black uppercase px-4 py-2.5 hover:bg-bg-main transition-all text-text-soft cursor-pointer">
+                                    Cancel
+                                  </button>
+                                </DialogClose>
+                                <DialogClose asChild>
+                                  <button className="rounded-xl bg-red-500 hover:bg-red-600 text-white text-[11px] font-black uppercase px-4 py-2.5 shadow-md transition-all cursor-pointer">
+                                    Yes, Delete
+                                  </button>
+                                </DialogClose>
+                              </DialogFooter>
+                            </DialogContent>
+                          </Dialog>
                         </DropdownMenuContent>
                       </DropdownMenu>
                     </td>

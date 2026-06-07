@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "drh. Raditya Pratama",
+    "nip": "NIP. 1990041202",
+    "specialization": "Bedah & Jaringan Lunak",
+    "schedule": "Senin - Kamis (08:00 - 14:00)",
+    "phone": "0812-3456-7890",
+    "email": "raditya.p@vetclinic.com",
+    "status": "Aktif"
+  },
+  {
+    "id": 2,
+    "name": "drh. Dian Sastro, M.Si",
+    "nip": "NIP. 1993051204",
+    "specialization": "Hewan Eksotis & Avian",
+    "schedule": "Senin, Rabu, Jumat (15:00 - 19:00)",
+    "phone": "0813-9876-5432",
+    "email": "dian.sastro@vetclinic.com",
+    "status": "Aktif"
+  },
+  {
+    "id": 3,
+    "name": "drh. Bambang Wijaya",
+    "nip": "NIP. 1987082301",
+    "specialization": "Internal Medicine (Anjing & Kucing)",
+    "schedule": "Selasa & Kamis (10:00 - 15:00)",
+    "phone": "0857-1122-3344",
+    "email": "bambang.w@vetclinic.com",
+    "status": "Cuti"
+  },
+  {
+    "id": 4,
+    "name": "drh. Rian Hidayat",
+    "nip": "NIP. 1995110509",
+    "specialization": "Dokter Hewan Umum",
+    "schedule": "Setiap Hari (08.00 - 17:00)",
+    "phone": "0822-4455-6677",
+    "email": "rian.hidayat@vetclinic.com",
+    "status": "Aktif"
+  },
+   {
+    "id": 5,
+    "name": "drh. Dinda Khairunnisa",
+    "nip": "NIP. 1995110509",
+    "specialization": "Dokter Hewan Umum",
+    "schedule": "Setiap Hari (08.00 - 17:00)",
+    "phone": "0822-4455-6677",
+    "email": "dinda.khairunnisa@vetclinic.com",
+    "status": "Aktif"
+  },
+  {
+    "id": 6,
+    "name": "drh. Linda Utama, Sp.KHA",
+    "nip": "NIP. 1989041702",
+    "specialization": "Dermatologi (Kulit & Alergi)",
+    "schedule": "Sabtu & Minggu (09:00 - 13:00)",
+    "phone": "0811-8899-0011",
+    "email": "linda.utama@vetclinic.com",
+    "status": "Cuti"
+  }
+]

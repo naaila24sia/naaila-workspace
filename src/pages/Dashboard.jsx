@@ -27,7 +27,7 @@ export default function Dashboard() {
 
         {/* STATS */}
         <div className="grid grid-cols-3 gap-4 mb-5">
-          <StatsCard title="Total Clients" value="8434" icon={<FaPaw />} />
+          <StatsCard title="Total Clients" value={"8434"} icon={<FaPaw />} />
 
           <StatsCard title="Total Staff" value="240" icon={<FaChartPie />} />
 

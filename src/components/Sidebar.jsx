@@ -70,6 +70,11 @@ export default function Sidebar() {
             Reports
           </NavLink>
 
+          <NavLink to="/feedback" className={menuClass}>
+            <FaChartPie />
+            Feedback and Complain
+          </NavLink>
+
           {/* LABEL */}
           <p className="text-[10px] uppercase tracking-[2px] text-white/30 font-bold px-4 mt-6 mb-2">
             Veterinary
@@ -88,6 +93,11 @@ export default function Sidebar() {
           <NavLink to="/owners" className={menuClass}>
             <FaUserAlt />
             Pet Owners
+          </NavLink>
+
+          <NavLink to="/doctors" className={menuClass}>
+            <FaUserAlt />
+            Doctors
           </NavLink>
 
           <NavLink to="/records" className={menuClass}>

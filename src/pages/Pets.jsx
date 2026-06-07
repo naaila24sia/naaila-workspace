@@ -1,6 +1,14 @@
 import { useState } from "react";
 import PageHeader from "../components/PageHeader";
-import { FaPlus, FaSearch, FaEllipsisV, FaVenus, FaMars } from "react-icons/fa";
+import {
+  FaPlus,
+  FaSearch,
+  FaEllipsisV,
+  FaVenus,
+  FaMars,
+  FaHeartbeat,
+  FaBriefcaseMedical,
+} from "react-icons/fa";
 import { MdOutlinePets, MdOutlineHistory } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import petsData from "../data/Pets.json";
@@ -16,6 +24,30 @@ export default function Pets() {
       item.type.toLowerCase().includes(query)
     );
   });
+
+  const getStatusDetails = (status) => {
+    switch (status?.toLowerCase()) {
+      case "healthy":
+        return {
+          badgeClass: "bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200/60 text-emerald-600 shadow-sm shadow-emerald-100",
+          dotClass: "bg-emerald-500",
+          icon: <FaHeartbeat className="text-[12px] text-emerald-500 animate-pulse" />,
+        };
+      case "treatment":
+      case "sick":
+        return {
+          badgeClass: "bg-gradient-to-r from-rose-50 to-orange-50 border-rose-200/60 text-rose-600 shadow-sm shadow-rose-100",
+          dotClass: "bg-rose-500",
+          icon: <FaBriefcaseMedical className="text-[11px] text-rose-500" />,
+        };
+      default: // Misal untuk status "Recovery", "Checkup", dll
+        return {
+          badgeClass: "bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200/60 text-amber-600 shadow-sm shadow-amber-100",
+          dotClass: "bg-amber-500",
+          icon: <FaBriefcaseMedical className="text-[11px] text-amber-500" />,
+        };
+    }
+  };
 
   return (
     <div className="p-6 space-y-6 bg-bg-main min-h-screen font-barlow">
@@ -67,113 +99,114 @@ export default function Pets() {
             </thead>
             <tbody className="divide-y divide-border text-sm">
               {filteredPets.length > 0 ? (
-                filteredPets.map((pet) => (
-                  <tr
-                    key={pet.id}
-                    className="hover:bg-bg-main/30 transition-all duration-300 group"
-                  >
-                    {/* Column 1: Patient Profile */}
-                    <td className="px-8 py-5">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-2xl bg-primary-soft flex items-center justify-center border-2 border-white shadow-md transition-transform group-hover:scale-110 group-hover:rotate-3 overflow-hidden">
-                          <img
-                            src={pet.img}
-                            alt={pet.pet}
-                            className="w-9 h-9 object-contain"
-                          />
-                        </div>
-                        <div>
-                          <NavLink to={`/petdetail/${pet.id}`}>
-                            <p className="font-poppins font-bold text-text-main text-base uppercase leading-tight hover:text-primary transition cursor-pointer">
-                              {pet.pet}
+                filteredPets.map((pet) => {
+                  const statusInfo = getStatusDetails(pet.status);
+
+                  return (
+                    <tr
+                      key={pet.id}
+                      className="hover:bg-bg-main/30 transition-all duration-300 group"
+                    >
+                      {/* Column 1: Patient Profile */}
+                      <td className="px-8 py-5">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-primary-soft flex items-center justify-center border-2 border-white shadow-md transition-transform group-hover:scale-110 group-hover:rotate-3 overflow-hidden">
+                            <img
+                              src={pet.img}
+                              alt={pet.pet}
+                              className="w-9 h-9 object-contain"
+                            />
+                          </div>
+                          <div>
+                            <NavLink to={`/petdetail/${pet.id}`}>
+                              <p className="font-poppins font-bold text-text-main text-base uppercase leading-tight hover:text-primary transition cursor-pointer">
+                                {pet.pet}
+                              </p>
+                            </NavLink>
+                            <p className="text-[10px] font-bold text-primary flex items-center gap-1 mt-0.5">
+                              <MdOutlinePets /> ID-00{pet.id}
                             </p>
-                          </NavLink>
-                          <p className="text-[10px] font-bold text-primary flex items-center gap-1 mt-0.5">
-                            <MdOutlinePets /> ID-00{pet.id}
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* Column 2: Breed */}
+                      <td className="px-6 py-5">
+                        <div className="space-y-1">
+                          <span className="px-2.5 py-1 bg-bg-main rounded-md text-[10px] font-black text-text-soft border border-border uppercase">
+                            {pet.type}
+                          </span>
+                          <p className="text-xs font-bold text-text-main mt-1 italic">
+                            {pet.breed}
                           </p>
                         </div>
-                      </div>
-                    </td>
+                      </td>
 
-                    {/* Column 2: Breed */}
-                    <td className="px-6 py-5">
-                      <div className="space-y-1">
-                        <span className="px-2.5 py-1 bg-bg-main rounded-md text-[10px] font-black text-text-soft border border-border uppercase">
-                          {pet.type}
-                        </span>
-                        <p className="text-xs font-bold text-text-main mt-1 italic">
-                          {pet.breed}
-                        </p>
-                      </div>
-                    </td>
-
-                    {/* Column 3: Age/Gender */}
-                    <td className="px-6 py-5">
-                      <div className="flex flex-col gap-1">
-                        <p className="text-sm font-bold text-text-main">
-                          {pet.age}
-                        </p>
-                        <div className="flex items-center gap-1.5">
-                          {pet.gender === "Male" ? (
-                            <span className="text-blue-500 flex items-center gap-1 text-[10px] font-bold">
-                              <FaMars /> MALE
-                            </span>
-                          ) : (
-                            <span className="text-pink-500 flex items-center gap-1 text-[10px] font-bold">
-                              <FaVenus /> FEMALE
-                            </span>
-                          )}
+                      {/* Column 3: Age/Gender */}
+                      <td className="px-6 py-5">
+                        <div className="flex flex-col gap-1">
+                          <p className="text-sm font-bold text-text-main">
+                            {pet.age}
+                          </p>
+                          <div className="flex items-center gap-1.5">
+                            {pet.gender === "Male" ? (
+                              <span className="text-blue-500 flex items-center gap-1 text-[10px] font-bold">
+                                <FaMars /> MALE
+                              </span>
+                            ) : (
+                              <span className="text-pink-500 flex items-center gap-1 text-[10px] font-bold">
+                                <FaVenus /> FEMALE
+                              </span>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </td>
+                      </td>
 
-                    {/* Column 4: Owner */}
-                    <td className="px-6 py-5">
-                      <p className="font-poppins font-bold text-text-main text-sm leading-tight">
-                        {pet.owner}
-                      </p>
-                      <p className="text-[10px] font-bold text-text-soft/60 uppercase tracking-wider mt-0.5">
-                        Client
-                      </p>
-                    </td>
+                      {/* Column 4: Owner */}
+                      <td className="px-6 py-5">
+                        <p className="font-poppins font-bold text-text-main text-sm leading-tight">
+                          {pet.owner}
+                        </p>
+                        <p className="text-[10px] font-bold text-text-soft/60 uppercase tracking-wider mt-0.5">
+                          Client
+                        </p>
+                      </td>
 
-                    {/* Column 5: Status */}
-                    <td className="px-6 py-5">
-                      <div className="flex justify-center">
-                        <div
-                          className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border ${
-                            pet.status === "Healthy"
-                              ? "bg-success-bg border-success-text/10 text-success-text"
-                              : "bg-accent-bg border-accent-text/10 text-accent-text"
-                          }`}
-                        >
+                      {/* Column 5: Status dengan Ikon Tambahan */}
+                      <td className="px-6 py-5">
+                        <div className="flex justify-center">
                           <div
-                            className={`w-1.5 h-1.5 rounded-full ${pet.status === "Healthy" ? "bg-success-text" : "bg-accent-text"}`}
-                          />
-                          <span className="text-[10px] font-black uppercase tracking-wider">
-                            {pet.status}
-                          </span>
+                            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border shadow-sm transition-all duration-300 ${statusInfo.badgeClass}`}
+                          >
+                            <div
+                              className={`w-1.5 h-1.5 rounded-full ${statusInfo.dotClass}`}
+                            />
+                            {statusInfo.icon}
+                            <span className="text-[10px] font-black uppercase tracking-wider">
+                              {pet.status}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </td>
+                      </td>
 
-                    {/* Column 6: Actions */}
-                    <td className="px-8 py-5 text-right">
-                      <div className="flex justify-end items-center gap-2">
-                        <button className="flex items-center gap-2 px-4 py-2 bg-bg-main hover:bg-primary hover:text-white text-text-soft rounded-xl text-[10px] font-black uppercase tracking-tighter transition-all duration-300 group/btn">
-                          History{" "}
-                          <MdOutlineHistory
-                            size={14}
-                            className="group-hover/btn:rotate-12 transition-transform"
-                          />
-                        </button>
-                        <button className="p-2.5 text-text-soft/30 hover:text-primary transition-colors">
-                          <FaEllipsisV className="text-xs" />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))
+                      {/* Column 6: Actions */}
+                      <td className="px-8 py-5 text-right">
+                        <div className="flex justify-end items-center gap-2">
+                          <button className="flex items-center gap-2 px-4 py-2 bg-bg-main hover:bg-primary hover:text-white text-text-soft rounded-xl text-[10px] font-black uppercase tracking-tighter transition-all duration-300 group/btn">
+                            History{" "}
+                            <MdOutlineHistory
+                              size={14}
+                              className="group-hover/btn:rotate-12 transition-transform"
+                            />
+                          </button>
+                          <button className="p-2.5 text-text-soft/30 hover:text-primary transition-colors">
+                            <FaEllipsisV className="text-xs" />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
               ) : (
                 <tr>
                   <td colSpan="6" className="px-8 py-20 text-center">
@@ -188,6 +221,7 @@ export default function Pets() {
         </div>
 
         {/* FOOTER INFO - Identik dengan Owners */}
+        {/* FOOTER INFO - Perbaikan pada filteredPets */}
         <div className="p-6 bg-bg-main/20 border-t border-border flex justify-between items-center">
           <p className="text-xs text-text-soft font-bold uppercase tracking-widest">
             Showing <span className="text-primary">{filteredPets.length}</span>{" "}

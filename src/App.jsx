@@ -9,6 +9,8 @@ function App() {
   const Appointments = lazy(() => import("./pages/Appointments"));
   const Pets = lazy(() => import("./pages/Pets"));
   const Owners = lazy(() => import("./pages/Owners"));
+  const Doctors = lazy(() => import("./pages/Doctors"));
+  const Feedback = lazy(() => import("./pages/Feedback"));
 
   const NotFound = lazy(() => import("./pages/NotFound"));
   const Error400 = lazy(() => import("./pages/Error400"));
@@ -41,6 +43,8 @@ function App() {
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/pets" element={<Pets />} />
           <Route path="/owners" element={<Owners />} />
+          <Route path="/doctors" element={<Doctors />} />
+          <Route path="/feedback" element={<Feedback />} />
 
           <Route path="/appointments/add" element={<AddAppointments />} />
           <Route path="/pets/add" element={<AddPet />} />
