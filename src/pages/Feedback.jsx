@@ -23,7 +23,6 @@ export default function Feedback() {
   const searchInputRef = useRef(null);
 
   useEffect(() => {
-    document.title = "VetCare Admin - Feedback & Complaints";
     if (searchInputRef.current) {
       searchInputRef.current.focus();
     }
