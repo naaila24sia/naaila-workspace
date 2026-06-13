@@ -3,7 +3,7 @@ import { FaUserPlus } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { MdError } from "react-icons/md";
-import { authAPI } from "../services/authAPI";
+import { authAPI } from "../../services/authAPI";
 
 export default function Register() {
   const navigate = useNavigate();
