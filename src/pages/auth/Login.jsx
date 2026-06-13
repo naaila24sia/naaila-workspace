@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { RiTwitterXFill } from "react-icons/ri";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { MdError } from "react-icons/md";
-import { authAPI } from "../../services/authAPI";
+import { authAPI } from "../services/authAPI";
 
 export default function Login() {
   const navigate = useNavigate();
