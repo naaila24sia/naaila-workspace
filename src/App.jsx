@@ -10,6 +10,7 @@ function App() {
   const Pets = lazy(() => import("./pages/Pets"));
   const Owners = lazy(() => import("./pages/Owners"));
   const Doctors = lazy(() => import("./pages/Doctors"));
+  const Users = lazy(() => import("./pages/Users"));
   const Feedback = lazy(() => import("./pages/Feedback"));
 
   const NotFound = lazy(() => import("./pages/NotFound"));
@@ -20,7 +21,9 @@ function App() {
   const AddAppointments = lazy(() => import("./pages/AddApointments"));
   const AddPet = lazy(() => import("./pages/AddPets"));
   const AddOwner = lazy(() => import("./pages/AddOwners"));
+  const AddUsers = lazy(() => import("./pages/AddUsers"));
 
+  const EditUsers = lazy(() => import("./pages/EditUsers"));
   const AppointmentDetail = lazy(() => import("./pages/AppointmentDetail"));
   const PetDetail = lazy(() => import("./pages/PetDetail"));
   const OwnerDetail = lazy(() => import("./pages/OwnerDetail"));
@@ -44,11 +47,15 @@ function App() {
           <Route path="/pets" element={<Pets />} />
           <Route path="/owners" element={<Owners />} />
           <Route path="/doctors" element={<Doctors />} />
+          <Route path="/users" element={<Users />} />
           <Route path="/feedback" element={<Feedback />} />
 
           <Route path="/appointments/add" element={<AddAppointments />} />
           <Route path="/pets/add" element={<AddPet />} />
           <Route path="/owners/add" element={<AddOwner />} />
+          <Route path="/users/add" element={<AddUsers />} />
+          
+          <Route path="/users/edit/:id" element={<EditUsers />} />
 
           <Route path="/appointments/:id" element={<AppointmentDetail />} />
           <Route path="/petdetail/:id" element={<PetDetail />} />

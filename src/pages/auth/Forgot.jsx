@@ -44,7 +44,7 @@ export default function Forgot() {
       {/* BACK */}
       <div className="text-center mt-6">
         <Link
-          to="/"
+          to="/login"
           className="inline-flex items-center gap-2 text-sm text-text-soft hover:text-accent transition"
         >
           <FaArrowLeft /> Back to Login

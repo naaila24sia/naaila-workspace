@@ -100,6 +100,11 @@ export default function Sidebar() {
             Doctors
           </NavLink>
 
+           <NavLink to="/users" className={menuClass}>
+            <FaUserAlt />
+            Users
+          </NavLink>
+
           <NavLink to="/records" className={menuClass}>
             <FaClipboardList />
             Medical Records
