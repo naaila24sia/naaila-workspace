@@ -7,7 +7,6 @@ import Hero from "../sections/Hero";
 import TrustedBy from "../sections/TrustedBy";
 import About from "../sections/About";
 import Features from "../sections/Features";
-import DashboardPreview from "../sections/DashboardPreview";
 import Workflow from "../sections/Workflow";
 import Benefits from "../sections/Benefits";
 import Testimonials from "../sections/Testimonials";
@@ -35,9 +34,6 @@ export default function Guest() {
 
         {/* 5. FITUR UTAMA CRM */}
         <Features />
-
-        {/* 6. DASHBOARD PREVIEW & ANALYTICS */}
-        <DashboardPreview />
 
         {/* 7. CRM WORKFLOW TIMELINE */}
         <Workflow />

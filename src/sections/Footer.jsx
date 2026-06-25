@@ -21,7 +21,7 @@ export default function Footer() {
               Vet<span className="text-primary group-hover:text-primary-hover transition-colors">Care</span>
             </h1>
             <p className="text-[10px] text-white/40 mt-0.5 uppercase tracking-widest font-bold block">
-              CRM Platform
+              Klinik Dokter Hewan
             </p>
           </a>
           
@@ -52,7 +52,7 @@ export default function Footer() {
           <ul className="space-y-2 text-xs md:text-sm text-neutral-400">
             <li><a href="#about" className="hover:text-white transition duration-300">Tentang Kami</a></li>
             <li><a href="#features" className="hover:text-white transition duration-300">Fitur CRM</a></li>
-            <li><a href="#analytics" className="hover:text-white transition duration-300">Analisis Bisnis</a></li>
+            <li><a href="/login" className="hover:text-white transition duration-300">Portal Member</a></li>
             <li><a href="#workflow" className="hover:text-white transition duration-300">Alur Kerja</a></li>
             <li><a href="#faq" className="hover:text-white transition duration-300">Tanya Jawab (FAQ)</a></li>
           </ul>

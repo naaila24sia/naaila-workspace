@@ -23,7 +23,6 @@ export default function Navbar() {
     { name: "Home", href: "#home" },
     { name: "Tentang", href: "#about" },
     { name: "Layanan", href: "#features" },
-    { name: "Portal Anabul", href: "#analytics" },
     { name: "Alur", href: "#workflow" },
     { name: "Dokter", href: "#doctors" },
     { name: "Benefit", href: "#benefits" },

@@ -60,11 +60,11 @@ export default function Hero() {
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
-            href="#analytics"
+            href="/login"
             className="border border-border bg-bg-card hover:bg-bg-main hover:border-text-soft text-text-main font-semibold px-6 py-4 rounded-xl transition duration-300 flex items-center gap-2 text-sm"
           >
             <Play className="w-4 h-4 text-accent fill-accent" />
-            <span>Lihat Portal Member</span>
+            <span>Masuk Portal Member</span>
           </a>
         </motion.div>
 
