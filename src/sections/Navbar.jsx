@@ -68,7 +68,7 @@ export default function Navbar() {
         {/* Action Buttons */}
         <div className="hidden lg:flex items-center gap-4">
           <NavLink
-            href="/login"
+            to="/login"
             className="text-text-main font-semibold text-sm hover:text-primary px-4 py-2 rounded-xl transition duration-300"
           >
             Login
