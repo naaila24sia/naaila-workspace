@@ -1,0 +1,455 @@
+```md
+# VetCare CRM Landing Page
+
+## Role
+
+Bertindak sebagai Senior Product Manager, UI/UX Designer, Frontend Developer, dan React Developer.
+
+Buat Landing Page modern untuk **VetCare CRM**, sebuah sistem Customer Relationship Management (CRM) yang membantu klinik hewan mengelola pelanggan, hewan peliharaan, rekam medis, appointment, vaksinasi, inventori, membership, promosi, dan analisis bisnis.
+
+Gunakan teknologi berikut:
+
+- React
+- Vite
+- Tailwind CSS v4
+- Shadcn UI
+- Framer Motion
+- React Icons
+- Recharts
+
+Landing page harus menggunakan **design system yang sudah tersedia** dan **tidak membuat warna baru**.
+
+---
+
+# Design System
+
+Gunakan seluruh variabel CSS yang sudah tersedia.
+
+## Font
+
+Heading
+
+- Plus Jakarta Sans (`font-heading`)
+
+Body
+
+- Inter (`font-body`)
+
+## Warna
+
+Gunakan hanya warna berikut.
+
+Primary
+
+- `bg-primary`
+- `hover:bg-primary-hover`
+
+Secondary
+
+- `bg-secondary`
+- `bg-secondary-light`
+- `bg-secondary-dark`
+
+Accent
+
+- `bg-accent`
+- `hover:bg-accent-hover`
+
+Background
+
+- `bg-bg-main`
+
+Card
+
+- `bg-bg-card`
+
+Border
+
+- `border-border`
+
+Text
+
+- `text-text-main`
+- `text-text-soft`
+
+Status
+
+- `bg-success`
+- `bg-success-soft`
+
+- `bg-warning`
+- `bg-warning-dark`
+
+- `bg-error`
+- `bg-error-soft`
+
+Jangan menggunakan warna Tailwind lain seperti blue-500, green-500, emerald, slate, zinc, gray, dan sejenisnya.
+
+Gunakan utility class yang sudah tersedia:
+
+- card
+- button-primary
+- button-accent
+- input
+- badge-success
+- badge-warning
+- badge-error
+- shadow-soft
+
+---
+
+# PRD V1 — Landing Page Dasar
+
+## Tujuan
+
+Memperkenalkan VetCare CRM kepada klinik hewan dan pet care.
+
+## Target Pengguna
+
+- Klinik Hewan
+- Dokter Hewan
+- Pet Grooming
+- Pet Shop
+
+## Struktur Landing Page
+
+- Navbar
+- Hero Section
+- Tentang VetCare CRM
+- Fitur Utama
+- CTA
+- Footer
+
+## Hero Section
+
+Headline
+
+Kelola Klinik Hewan Lebih Mudah dengan VetCare CRM
+
+Subheadline
+
+Kelola pelanggan, data hewan, rekam medis, appointment, dan vaksinasi dalam satu platform modern.
+
+CTA
+
+- Mulai Gratis
+- Lihat Demo
+
+## Fitur
+
+Tampilkan empat fitur utama.
+
+- Customer Management
+- Pet Management
+- Appointment
+- Medical Record
+
+## Tampilan
+
+Desain sederhana.
+
+Belum ada dashboard preview.
+
+Belum ada statistik.
+
+Belum ada testimonial.
+
+Belum ada FAQ.
+
+---
+
+# PRD V2 — Landing Page Pengembangan
+
+Kembangkan seluruh tampilan V1.
+
+Tambahkan section berikut.
+
+- Dashboard Preview
+- Statistik Pengguna
+- Benefit
+- Testimoni
+- FAQ
+- Profil Dokter Hewan
+- Booking Konsultasi
+
+Tambahkan fitur CRM.
+
+- Membership
+- Reminder Vaksin
+- Inventory
+- Customer History
+- Campaign Promotion
+
+Dashboard Preview menampilkan.
+
+- Customer Statistics
+- Pet Statistics
+- Appointment
+- Revenue
+
+Tambahkan animasi Framer Motion.
+
+Gunakan card dengan efek hover dan shadow-soft.
+
+---
+
+# PRD V3 — Landing Page CRM Lengkap
+
+Landing page menjadi media promosi resmi VetCare CRM.
+
+Tambahkan section berikut.
+
+## Hero Premium
+
+Hero dengan ilustrasi dashboard interaktif.
+
+Floating statistic card.
+
+---
+
+## Trusted By
+
+Logo klinik dan partner.
+
+---
+
+## CRM Workflow
+
+Alur penggunaan.
+
+Pemilik Hewan
+
+↓
+
+Registrasi
+
+↓
+
+Tambah Data Hewan
+
+↓
+
+Booking Pemeriksaan
+
+↓
+
+Pemeriksaan Dokter
+
+↓
+
+Medical Record
+
+↓
+
+Pembayaran
+
+↓
+
+Membership
+
+↓
+
+Pelanggan Loyal
+
+---
+
+## Dashboard Analytics
+
+Gunakan Recharts.
+
+Tampilkan.
+
+- Customer Analytics
+- Revenue Analytics
+- Appointment Analytics
+- Recent Activity
+
+---
+
+## CRM Features
+
+### Operational CRM
+
+- Customer Management
+- Pet Management
+- Appointment
+- Medical Records
+- Vaccination
+
+### Analytical CRM
+
+- Revenue Dashboard
+- Customer Dashboard
+- KPI Analytics
+
+### Collaborative CRM
+
+- WhatsApp Notification
+- Email Notification
+- Customer Feedback
+
+### Strategic CRM
+
+- Membership
+- Loyalty Program
+- Promotion Campaign
+
+---
+
+## Tambahkan Section
+
+- Tentang VetCare
+- Benefit
+- Dashboard Preview
+- CRM Features
+- Workflow
+- Testimoni
+- FAQ
+- Newsletter
+- Contact Form
+- Google Maps
+- Footer
+
+---
+
+# Landing Page Flow
+
+Navbar
+
+↓
+
+Hero
+
+↓
+
+Trusted By
+
+↓
+
+Tentang VetCare CRM
+
+↓
+
+CRM Features
+
+↓
+
+Dashboard Preview
+
+↓
+
+CRM Workflow
+
+↓
+
+Benefit
+
+↓
+
+Testimoni
+
+↓
+
+FAQ
+
+↓
+
+Newsletter
+
+↓
+
+Contact
+
+↓
+
+Footer
+
+---
+
+# UI Components
+
+Gunakan komponen reusable.
+
+- Navbar
+- Hero
+- Card
+- Button
+- Badge
+- Accordion
+- Avatar
+- Chart
+- Contact Form
+- CTA Banner
+- Footer
+
+Semua card menggunakan utility `card`.
+
+Seluruh tombol menggunakan utility `button-primary` atau `button-accent`.
+
+Input menggunakan utility `input`.
+
+---
+
+# Animasi
+
+Gunakan Framer Motion.
+
+Tambahkan:
+
+- Fade In
+- Fade Up
+- Hover Scale
+- Scroll Reveal
+- Counter Animation
+- Smooth Scroll
+
+Animasi harus ringan dan tidak berlebihan.
+
+---
+
+# Responsive
+
+Landing page harus optimal pada:
+
+- Mobile
+- Tablet
+- Desktop
+
+---
+
+# Struktur Folder
+
+src/
+
+├── assets/
+
+├── components/
+
+├── sections/
+
+├── hooks/
+
+├── pages/
+
+├── lib/
+
+└── App.jsx
+
+Setiap section dibuat sebagai komponen React terpisah.
+
+---
+
+# Output
+
+Generate source code lengkap menggunakan React + Vite + Tailwind CSS.
+
+Gunakan seluruh design system yang telah tersedia.
+
+Jangan membuat warna, font, utility, atau komponen baru di luar design system tersebut kecuali benar-benar diperlukan.
+
+Pastikan hasil akhir memiliki tampilan profesional, modern, konsisten dengan dashboard VetCare CRM, dan siap dijalankan menggunakan:
+
+npm install
+
+npm run dev
+```

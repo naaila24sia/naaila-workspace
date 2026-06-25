@@ -1,13 +1,14 @@
 import { FaPaw } from "react-icons/fa";
 
-export default function PageHeader({ title, breadcrumb, children }) {
+// Tambahkan prop 'icon' di sini
+export default function PageHeader({ title, breadcrumb, icon: Icon, children }) {
   return (
     <div className="flex items-center justify-between p-6 bg-bg-card rounded-[1.5rem] border border-border shadow-sm">
       
       {/* LEFT SECTION */}
       <div className="flex flex-col gap-1">
         
-        {/* Breadcrumb - Diletakkan di atas Title agar hirarki visual lebih rapi */}
+        {/* Breadcrumb */}
         <nav className="flex items-center space-x-2 text-[11px] font-bold uppercase tracking-wider">
           {Array.isArray(breadcrumb) ? (
             breadcrumb.map((item, index) => (
@@ -15,7 +16,7 @@ export default function PageHeader({ title, breadcrumb, children }) {
                 <span
                   className={
                     index === breadcrumb.length - 1
-                      ? "text-primary" // Highlight halaman aktif dengan warna brand
+                      ? "text-primary" 
                       : "text-text-soft"
                   }
                 >
@@ -35,7 +36,10 @@ export default function PageHeader({ title, breadcrumb, children }) {
         {/* Title & Icon */}
         <div className="flex items-center gap-3 mt-1">
           <div className="p-2.5 bg-primary-soft rounded-xl">
-            <FaPaw className="text-primary text-xl" />
+            {/* Jika prop 'icon' dikirim, render icon tersebut.
+              Jika tidak ada, otomatis pakai FaPaw.
+            */}
+            {Icon ? <Icon className="text-primary text-xl" /> : <FaPaw className="text-primary text-xl" />}
           </div>
           <h1 className="text-2xl font-poppins font-extrabold text-text-main tracking-tight">
             {title}

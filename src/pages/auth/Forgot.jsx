@@ -27,7 +27,7 @@ export default function Forgot() {
           <input
             type="email"
             placeholder="admin@anabul.com"
-            className="input focus:ring-accent"
+            className="input focus:ring-primary w-full text-text-main placeholder:text-text-soft bg-bg-main focus:bg-bg-card"
             required
           />
         </div>
@@ -35,7 +35,7 @@ export default function Forgot() {
         {/* BUTTON */}
         <button
           type="submit"
-          className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition"
+          className="w-full bg-primary hover:bg-primary-hover text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition cursor-pointer shadow-md shadow-primary/10"
         >
           <FaPaperPlane /> Send Reset Link
         </button>
@@ -45,7 +45,7 @@ export default function Forgot() {
       <div className="text-center mt-6">
         <Link
           to="/login"
-          className="inline-flex items-center gap-2 text-sm text-text-soft hover:text-accent transition"
+          className="inline-flex items-center gap-2 text-sm text-text-soft hover:text-primary transition-colors font-medium"
         >
           <FaArrowLeft /> Back to Login
         </Link>

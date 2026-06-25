@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import StatsCard from "../components/StatsCard";
 import AppointmentTable from "../components/AppointmentTable";
 import ChartCard from "../components/ChartCard";
@@ -7,6 +8,20 @@ import { NavLink } from "react-router-dom";
 import { FaPaw, FaChartPie, FaPlus } from "react-icons/fa";
 
 export default function Dashboard() {
+  // 1. Buat state untuk menampung nama user secara dinamis
+  const [userName, setUserName] = useState("Loading...");
+
+  // 2. Ambil nama dari localStorage saat halaman dimuat
+  useEffect(() => {
+    const savedUser = localStorage.getItem("user_profile");
+    if (savedUser) {
+      const userObj = JSON.parse(savedUser);
+      setUserName(userObj.name); // Mengambil nama dinamis (misal: "admin123", "Ahmad", dll)
+    } else {
+      setUserName("Guest"); // Fallback jika tidak terdeteksi data login
+    }
+  }, []);
+
   return (
     <div className="flex min-h-screen bg-bg-main font-body">
       
@@ -14,7 +29,8 @@ export default function Dashboard() {
         {/* WELCOME */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="h1">Welcome back, Dr Naaila 👋</h1>
+            {/* 3. Teks Dr Naaila diganti dengan variabel userName */}
+            <h1 className="h1">Welcome back, {userName} 👋</h1>
 
             <p className="body-text text-text-soft mt-1">
               Your clinic is working in the mode:

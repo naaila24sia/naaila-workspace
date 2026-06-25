@@ -12,6 +12,8 @@ function App() {
   const Doctors = lazy(() => import("./pages/Doctors"));
   const Users = lazy(() => import("./pages/Users"));
   const Feedback = lazy(() => import("./pages/Feedback"));
+  const Guest = lazy(() => import("./pages/Guest"));
+  const Member = lazy(() => import("./pages/Member"));
 
   const NotFound = lazy(() => import("./pages/NotFound"));
   const Error400 = lazy(() => import("./pages/Error400"));
@@ -40,9 +42,12 @@ function App() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
+        <Route path="/" element={<Guest />} />
+        <Route path="/guest" element={<Guest />} />
+        <Route path="/member" element={<Member />} />
         {/* Main Layout */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/pets" element={<Pets />} />
           <Route path="/owners" element={<Owners />} />
@@ -54,7 +59,7 @@ function App() {
           <Route path="/pets/add" element={<AddPet />} />
           <Route path="/owners/add" element={<AddOwner />} />
           <Route path="/users/add" element={<AddUsers />} />
-          
+
           <Route path="/users/edit/:id" element={<EditUsers />} />
 
           <Route path="/appointments/:id" element={<AppointmentDetail />} />

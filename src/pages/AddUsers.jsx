@@ -21,8 +21,6 @@ export default function AddUsers() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-
-  // State untuk mengontrol visibilitas masing-masing password
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -168,6 +166,7 @@ export default function AddUsers() {
                     <option value="" disabled hidden>Pilih Role...</option>
                     <option value="Admin">Admin</option>
                     <option value="Dokter">Dokter</option>
+                    <option value="Member">Member</option>
                   </select>
                 </div>
               </div>

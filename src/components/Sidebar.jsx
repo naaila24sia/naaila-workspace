@@ -60,7 +60,7 @@ export default function Sidebar() {
             Analytics
           </p>
 
-          <NavLink to="/" className={menuClass}>
+          <NavLink to="/dashboard" className={menuClass}>
             <MdDashboard />
             Dashboard
           </NavLink>

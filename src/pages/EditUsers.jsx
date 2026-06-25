@@ -205,6 +205,7 @@ export default function EditUsers() {
                     <option value="" disabled hidden>Pilih Role...</option>
                     <option value="Admin">Admin</option>
                     <option value="Dokter">Dokter</option>
+                    <option value="Member">Member</option>
                   </select>
                 </div>
               </div>
