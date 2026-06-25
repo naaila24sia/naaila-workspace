@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,12 +67,12 @@ export default function Navbar() {
 
         {/* Action Buttons */}
         <div className="hidden lg:flex items-center gap-4">
-          <a
+          <NavLink
             href="/login"
             className="text-text-main font-semibold text-sm hover:text-primary px-4 py-2 rounded-xl transition duration-300"
           >
             Login
-          </a>
+          </NavLink>
           <a
             href="#contact"
             className="button-primary text-sm shadow-md shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1.5"
