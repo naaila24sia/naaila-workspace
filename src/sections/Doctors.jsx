@@ -26,7 +26,7 @@ export default function Doctors() {
       specialty: "Spesialis Gigi Satwa & Perawatan Mulut",
       experience: "6 Tahun Pengalaman",
       education: "Lulusan Universitas Gadjah Mada",
-      avatar: "https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&q=80&w=350",
+      avatar: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&q=80&w=350",
       color: "border-accent hover:shadow-accent/10",
       badgeColor: "bg-accent/10 text-accent-hover",
     },

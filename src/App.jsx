@@ -21,7 +21,7 @@ function App() {
   const Error403 = lazy(() => import("./pages/Error403"));
 
   const AddAppointments = lazy(() => import("./pages/AddApointments"));
-  const AddPet = lazy(() => import("./pages/AddPets"));
+  const AddPets = lazy(() => import("./pages/AddPets"));
   const AddOwner = lazy(() => import("./pages/AddOwners"));
   const AddUsers = lazy(() => import("./pages/AddUsers"));
 
@@ -56,7 +56,7 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
 
           <Route path="/appointments/add" element={<AddAppointments />} />
-          <Route path="/pets/add" element={<AddPet />} />
+          <Route path="/pets/add" element={<AddPets />} />
           <Route path="/owners/add" element={<AddOwner />} />
           <Route path="/users/add" element={<AddUsers />} />
 

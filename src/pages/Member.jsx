@@ -145,7 +145,7 @@ export default function Member() {
   };
 
   return (
-    <div className="bg-bg-main text-text-main font-body antialiased min-h-screen selection:bg-primary/30 relative overflow-hidden">
+    <div className="bg-bg-main text-text-main font-body antialiased min-h-screen selection:bg-primary/30 relative">
       
       {/* Background Blurs (Mengikuti gaya Landing Page) */}
       <div className="absolute top-[-10%] left-[-10%] -z-10 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />

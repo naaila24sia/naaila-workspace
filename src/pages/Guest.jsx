@@ -8,6 +8,7 @@ import TrustedBy from "../sections/TrustedBy";
 import About from "../sections/About";
 import Features from "../sections/Features";
 import Workflow from "../sections/Workflow";
+import Doctors from "../sections/Doctors";
 import Benefits from "../sections/Benefits";
 import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
@@ -37,6 +38,9 @@ export default function Guest() {
 
         {/* 7. CRM WORKFLOW TIMELINE */}
         <Workflow />
+
+        {/* 6. DOKTER SPESIALIS */}
+        <Doctors />
 
         {/* 8. BENEFIT OPERASIONAL */}
         <Benefits />

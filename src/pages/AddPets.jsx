@@ -12,14 +12,13 @@ export default function AddPets() {
         title="Patient Profile"
         subtitle="Enter the medical identity for the new anabul."
         breadcrumb={["Dashboard", "Pets", "Add Pet"]}
-        icon={<FaPaw className="text-primary text-xl" />}
+        icon={FaPaw} 
       />
 
       {/* FORM */}
       <div className="bg-bg-card rounded-[2.5rem] border border-border shadow-soft overflow-hidden">
         {/* CONTENT */}
         <div className="grid grid-cols-2 gap-12 p-10">
-          
           {/* LEFT: Identity & Photo */}
           <div>
             {/* TITLE */}
@@ -69,19 +68,19 @@ export default function AddPets() {
               {/* Grid untuk menyamakan komposisi baris */}
               <div className="grid grid-cols-2 gap-5">
                 <InputField label="Age" placeholder="e.g. 2 Years" />
-                
+
                 {/* Status disamakan dengan opsi yang ada di tabel */}
-                <SelectField 
-                  label="Initial Status" 
-                  options={["Healthy", "Treatment", "Sick"]} 
+                <SelectField
+                  label="Initial Status"
+                  options={["Healthy", "Treatment", "Sick"]}
                 />
               </div>
 
               {/* OWNER BOX */}
               <div className="border border-border bg-bg-main/30 rounded-[2rem] p-6 mt-4 shadow-inner">
-                <InputField 
-                  label="Parent / Owner" 
-                  placeholder="Search registered owner..." 
+                <InputField
+                  label="Parent / Owner"
+                  placeholder="Search registered owner..."
                 />
                 <p className="text-[10px] font-black italic text-text-soft mt-3 uppercase tracking-wider">
                   *note: owner must be registered first in the directory
@@ -89,14 +88,11 @@ export default function AddPets() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* FOOTER */}
         <div className="border-t border-border p-8 flex justify-end gap-5 bg-bg-main/10">
-          <SubmitButton type="secondary">
-            Discard
-          </SubmitButton>
+          <SubmitButton type="secondary">Discard</SubmitButton>
 
           <SubmitButton type="primary">
             Save Patient

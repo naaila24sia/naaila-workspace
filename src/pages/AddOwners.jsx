@@ -11,7 +11,7 @@ export default function AddOwners() {
         title="Client Registration"
         subtitle="Add a new owner to the directory database."
         breadcrumb={["Dashboard", "Owners", "Add Owner"]}
-        icon={<FaUserAlt className="text-primary text-xl" />}
+        icon={FaUserAlt} 
       />
 
       {/* FORM */}
