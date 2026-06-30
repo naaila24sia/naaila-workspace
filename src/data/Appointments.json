@@ -7,7 +7,13 @@
     "service": "Vaccination",
     "date": "12 May, 2026",
     "status": "Done",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+    "doctorId": 4,
+    "doctorName": "drh. Rian Hidayat",
+    "doctorSpecialization": "Dokter Hewan Umum",
+    "time": "09:00 AM",
+    "room": "Ruang Periksa B",
+    "notes": "Vaksinasi booster tahunan F3 lengkap. Kondisi kucing sangat aktif dan sehat."
   },
   {
     "id": 2,
@@ -17,7 +23,13 @@
     "service": "Checkup",
     "date": "13 May, 2026",
     "status": "Pending",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    "doctorId": 5,
+    "doctorName": "drh. Dinda Khairunnisa",
+    "doctorSpecialization": "Dokter Hewan Umum",
+    "time": "10:30 AM",
+    "room": "Ruang Periksa C",
+    "notes": "Pemeriksaan telinga karena sering digaruk. Kemungkinan terkena ear mites."
   },
   {
     "id": 3,
@@ -27,7 +39,13 @@
     "service": "Grooming",
     "date": "14 May, 2026",
     "status": "Pending",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616444.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616444.png",
+    "doctorId": 2,
+    "doctorName": "drh. Dian Sastro, M.Si",
+    "doctorSpecialization": "Hewan Eksotis & Avian",
+    "time": "01:00 PM",
+    "room": "Ruang Grooming D",
+    "notes": "Potong kuku dan perawatan bulu karena kusut di area perut."
   },
   {
     "id": 4,
@@ -37,7 +55,13 @@
     "service": "Sterilization",
     "date": "15 May, 2026",
     "status": "Done",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+    "doctorId": 1,
+    "doctorName": "drh. Raditya Pratama",
+    "doctorSpecialization": "Bedah & Jaringan Lunak",
+    "time": "08:30 AM",
+    "room": "Ruang Bedah Utama",
+    "notes": "Prosedur sterilisasi (Ovariohysterectomy). Pasca-operasi stabil dan diresepkan obat jalan."
   },
   {
     "id": 5,
@@ -47,7 +71,13 @@
     "service": "Vaccination",
     "date": "16 May, 2026",
     "status": "Pending",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    "doctorId": 4,
+    "doctorName": "drh. Rian Hidayat",
+    "doctorSpecialization": "Dokter Hewan Umum",
+    "time": "02:30 PM",
+    "room": "Ruang Periksa B",
+    "notes": "Vaksinasi tahunan Rabies dan DHPPi."
   },
   {
     "id": 6,
@@ -57,7 +87,13 @@
     "service": "Checkup",
     "date": "17 May, 2026",
     "status": "Done",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616490.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616490.png",
+    "doctorId": 2,
+    "doctorName": "drh. Dian Sastro, M.Si",
+    "doctorSpecialization": "Hewan Eksotis & Avian",
+    "time": "11:00 AM",
+    "room": "Ruang Periksa D",
+    "notes": "Perapian paruh dan kuku burung parkit. Kondisi bulu bersih dan sehat."
   },
   {
     "id": 7,
@@ -67,7 +103,13 @@
     "service": "Surgery",
     "date": "18 May, 2026",
     "status": "Pending",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    "doctorId": 1,
+    "doctorName": "drh. Raditya Pratama",
+    "doctorSpecialization": "Bedah & Jaringan Lunak",
+    "time": "10:00 AM",
+    "room": "Ruang Bedah Utama",
+    "notes": "Operasi hernia umbilikalis ringan. Pasien diwajibkan puasa 8 jam sebelum operasi."
   },
   {
     "id": 8,
@@ -77,7 +119,13 @@
     "service": "Grooming",
     "date": "19 May, 2026",
     "status": "Done",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+    "doctorId": 5,
+    "doctorName": "drh. Dinda Khairunnisa",
+    "doctorSpecialization": "Dokter Hewan Umum",
+    "time": "03:00 PM",
+    "room": "Ruang Grooming C",
+    "notes": "Mandi terapi antijamur. Ada kemerahan kecil di area ekor."
   },
   {
     "id": 9,
@@ -87,7 +135,13 @@
     "service": "Vaccination",
     "date": "20 May, 2026",
     "status": "Pending",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    "doctorId": 4,
+    "doctorName": "drh. Rian Hidayat",
+    "doctorSpecialization": "Dokter Hewan Umum",
+    "time": "09:30 AM",
+    "room": "Ruang Periksa B",
+    "notes": "Booster vaksin DHPPi kedua."
   },
   {
     "id": 10,
@@ -97,6 +151,12 @@
     "service": "Checkup",
     "date": "21 May, 2026",
     "status": "Done",
-    "img": "https://cdn-icons-png.flaticon.com/512/616/616438.png"
+    "img": "https://cdn-icons-png.flaticon.com/512/616/616438.png",
+    "doctorId": 2,
+    "doctorName": "drh. Dian Sastro, M.Si",
+    "doctorSpecialization": "Hewan Eksotis & Avian",
+    "time": "04:00 PM",
+    "room": "Ruang Periksa D",
+    "notes": "Pemeriksaan tubuh lemas dan nafsu makan berkurang. Diberikan multivitamin tetes."
   }
 ]

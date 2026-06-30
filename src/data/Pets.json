@@ -9,7 +9,15 @@
     "owner": "Andi Perkasa",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png",
     "last_visit": "12 May 2026",
-    "status": "Healthy"
+    "status": "Healthy",
+    "weight": "4.8 kg",
+    "temp": "38.6 °C",
+    "heartRate": "120 bpm",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "Feline Tricat (F3)", "date": "12 Jan 2026", "status": "Complete" },
+      { "name": "Rabies Booster", "date": "12 May 2026", "status": "Complete" }
+    ]
   },
   {
     "id": 2,
@@ -21,7 +29,15 @@
     "owner": "Budi Santoso",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
     "last_visit": "10 May 2026",
-    "status": "Under Treatment"
+    "status": "Under Treatment",
+    "weight": "32.5 kg",
+    "temp": "39.2 °C",
+    "heartRate": "95 bpm",
+    "allergies": ["Chicken Protein", "Penicillin"],
+    "vaccines": [
+      { "name": "DHPPi (Distemper, Hepatitis, Parvovirus)", "date": "10 Feb 2026", "status": "Complete" },
+      { "name": "Rabies", "date": "10 Feb 2026", "status": "Complete" }
+    ]
   },
   {
     "id": 3,
@@ -33,7 +49,14 @@
     "owner": "Santi Putri",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616444.png",
     "last_visit": "14 May 2026",
-    "status": "Healthy"
+    "status": "Healthy",
+    "weight": "2.1 kg",
+    "temp": "38.9 °C",
+    "heartRate": "210 bpm",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "Rabbit Hemorrhagic Disease (RHD)", "date": "05 Mar 2026", "status": "Complete" }
+    ]
   },
   {
     "id": 4,
@@ -45,7 +68,14 @@
     "owner": "Citra Kirana",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616554.png",
     "last_visit": "01 May 2026",
-    "status": "Recovery"
+    "status": "Recovery",
+    "weight": "1.9 kg",
+    "temp": "38.2 °C",
+    "heartRate": "135 bpm",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "Feline Tricat (F3)", "date": "01 May 2026", "status": "Complete" }
+    ]
   },
   {
     "id": 5,
@@ -57,7 +87,15 @@
     "owner": "Doni Setiawan",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616560.png",
     "last_visit": "20 April 2026",
-    "status": "Healthy"
+    "status": "Healthy",
+    "weight": "38.0 kg",
+    "temp": "38.4 °C",
+    "heartRate": "80 bpm",
+    "allergies": ["Beef Protein"],
+    "vaccines": [
+      { "name": "DHPPi Booster", "date": "20 Apr 2026", "status": "Complete" },
+      { "name": "Rabies Booster", "date": "20 Apr 2026", "status": "Complete" }
+    ]
   },
   {
     "id": 6,
@@ -69,7 +107,14 @@
     "owner": "Eka Mahendra",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616614.png",
     "last_visit": "05 May 2026",
-    "status": "Under Treatment"
+    "status": "Under Treatment",
+    "weight": "120 g",
+    "temp": "37.5 °C",
+    "heartRate": "350 bpm",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "None required", "date": "-", "status": "-" }
+    ]
   },
   {
     "id": 7,
@@ -81,7 +126,15 @@
     "owner": "Fanny Wijaya",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616430.png",
     "last_visit": "28 April 2026",
-    "status": "Healthy"
+    "status": "Healthy",
+    "weight": "8.5 kg",
+    "temp": "38.8 °C",
+    "heartRate": "115 bpm",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "Feline Tricat (F3)", "date": "28 Apr 2026", "status": "Complete" },
+      { "name": "Rabies", "date": "28 Apr 2026", "status": "Complete" }
+    ]
   },
   {
     "id": 8,
@@ -93,7 +146,14 @@
     "owner": "Gina Rizky",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
     "last_visit": "02 May 2026",
-    "status": "Healthy"
+    "status": "Healthy",
+    "weight": "6.2 kg",
+    "temp": "38.7 °C",
+    "heartRate": "100 bpm",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "DHPPi Booster", "date": "02 May 2026", "status": "Complete" }
+    ]
   },
   {
     "id": 9,
@@ -105,7 +165,14 @@
     "owner": "Hendra Kurnia",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616524.png",
     "last_visit": "15 April 2026",
-    "status": "Recovery"
+    "status": "Recovery",
+    "weight": "45 g",
+    "temp": "22.0 °C (Water)",
+    "heartRate": "N/A",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "None required", "date": "-", "status": "-" }
+    ]
   },
   {
     "id": 10,
@@ -117,6 +184,13 @@
     "owner": "Indra Jaya",
     "img": "https://cdn-icons-png.flaticon.com/512/616/616528.png",
     "last_visit": "07 May 2026",
-    "status": "Healthy"
+    "status": "Healthy",
+    "weight": "420 g",
+    "temp": "40.5 °C",
+    "heartRate": "250 bpm",
+    "allergies": ["None"],
+    "vaccines": [
+      { "name": "Avian Polyomavirus", "date": "10 Jan 2026", "status": "Complete" }
+    ]
   }
 ]

@@ -8,15 +8,31 @@ import {
   FaMars,
   FaHeartbeat,
   FaBriefcaseMedical,
+  FaExclamationCircle,
 } from "react-icons/fa";
 import { MdOutlinePets, MdOutlineHistory } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import petsData from "../data/Pets.json";
 
 export default function Pets() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [petsList, setPetsList] = useState(petsData);
 
-  const filteredPets = petsData.filter((item) => {
+  const handleUpdateStatus = (id, newStatus) => {
+    setPetsList((prevList) =>
+      prevList.map((item) =>
+        item.id === id ? { ...item, status: newStatus } : item
+      )
+    );
+  };
+
+  const filteredPets = petsList.filter((item) => {
     const query = searchQuery.toLowerCase();
     return (
       item.pet.toLowerCase().includes(query) ||
@@ -26,26 +42,31 @@ export default function Pets() {
   });
 
   const getStatusDetails = (status) => {
-    switch (status?.toLowerCase()) {
-      case "healthy":
-        return {
-          badgeClass: "bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200/60 text-emerald-600 shadow-sm shadow-emerald-100",
-          dotClass: "bg-emerald-500",
-          icon: <FaHeartbeat className="text-[12px] text-emerald-500 animate-pulse" />,
-        };
-      case "treatment":
-      case "sick":
-        return {
-          badgeClass: "bg-gradient-to-r from-rose-50 to-orange-50 border-rose-200/60 text-rose-600 shadow-sm shadow-rose-100",
-          dotClass: "bg-rose-500",
-          icon: <FaBriefcaseMedical className="text-[11px] text-rose-500" />,
-        };
-      default: // Misal untuk status "Recovery", "Checkup", dll
-        return {
-          badgeClass: "bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200/60 text-amber-600 shadow-sm shadow-amber-100",
-          dotClass: "bg-amber-500",
-          icon: <FaBriefcaseMedical className="text-[11px] text-amber-500" />,
-        };
+    const normalized = status?.toLowerCase() || "";
+    if (normalized === "healthy") {
+      return {
+        badgeClass: "bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200/60 text-emerald-600 shadow-sm shadow-emerald-100",
+        dotClass: "bg-emerald-500",
+        icon: <FaHeartbeat className="text-[12px] text-emerald-500 animate-pulse" />,
+      };
+    } else if (normalized.includes("treatment") || normalized === "sick") {
+      return {
+        badgeClass: "bg-gradient-to-r from-rose-50 to-orange-50 border-rose-200/60 text-rose-600 shadow-sm shadow-rose-100",
+        dotClass: "bg-rose-500",
+        icon: <FaBriefcaseMedical className="text-[11px] text-rose-500" />,
+      };
+    } else if (normalized === "critical") {
+      return {
+        badgeClass: "bg-gradient-to-r from-red-100 to-rose-100 border-red-300 text-red-700 shadow-md shadow-red-200 animate-pulse",
+        dotClass: "bg-red-600",
+        icon: <FaExclamationCircle className="text-[12px] text-red-600 animate-bounce" />,
+      };
+    } else { // e.g. "Recovery"
+      return {
+        badgeClass: "bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200/60 text-amber-600 shadow-sm shadow-amber-100",
+        dotClass: "bg-amber-500",
+        icon: <FaBriefcaseMedical className="text-[11px] text-amber-500" />,
+      };
     }
   };
 
@@ -172,20 +193,65 @@ export default function Pets() {
                         </p>
                       </td>
 
-                      {/* Column 5: Status dengan Ikon Tambahan */}
+                      {/* Column 5: Status dengan Ikon Tambahan (Bisa diklik & diubah) */}
                       <td className="px-6 py-5">
                         <div className="flex justify-center">
-                          <div
-                            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border shadow-sm transition-all duration-300 ${statusInfo.badgeClass}`}
-                          >
-                            <div
-                              className={`w-1.5 h-1.5 rounded-full ${statusInfo.dotClass}`}
-                            />
-                            {statusInfo.icon}
-                            <span className="text-[10px] font-black uppercase tracking-wider">
-                              {pet.status}
-                            </span>
-                          </div>
+                          <DropdownMenu>
+                            <DropdownMenuTrigger className="outline-none focus:outline-none active:scale-95 transition-transform">
+                              <div
+                                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border shadow-sm transition-all duration-300 cursor-pointer ${statusInfo.badgeClass}`}
+                              >
+                                <div
+                                  className={`w-1.5 h-1.5 rounded-full ${statusInfo.dotClass}`}
+                                />
+                                {statusInfo.icon}
+                                <span className="text-[10px] font-black uppercase tracking-wider">
+                                  {pet.status}
+                                </span>
+                              </div>
+                            </DropdownMenuTrigger>
+
+                            <DropdownMenuContent
+                              align="center"
+                              className="w-44 rounded-xl border border-border bg-white p-1 shadow-soft font-barlow outline-none"
+                            >
+                              {/* Healthy */}
+                              <DropdownMenuItem
+                                onClick={() => handleUpdateStatus(pet.id, "Healthy")}
+                                className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                              >
+                                <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                                Healthy
+                              </DropdownMenuItem>
+
+                              {/* Recovery */}
+                              <DropdownMenuItem
+                                onClick={() => handleUpdateStatus(pet.id, "Recovery")}
+                                className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                              >
+                                <div className="w-2 h-2 rounded-full bg-amber-500" />
+                                Recovery
+                              </DropdownMenuItem>
+
+                              {/* Under Treatment */}
+                              <DropdownMenuItem
+                                onClick={() => handleUpdateStatus(pet.id, "Under Treatment")}
+                                className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                              >
+                                <div className="w-2 h-2 rounded-full bg-rose-500" />
+                                Under Treatment
+                              </DropdownMenuItem>
+
+                              {/* Critical */}
+                              <DropdownMenuItem
+                                onClick={() => handleUpdateStatus(pet.id, "Critical")}
+                                className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                              >
+                                <div className="w-2 h-2 rounded-full bg-red-600" />
+                                Critical
+                              </DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
                         </div>
                       </td>
 

@@ -18,12 +18,14 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-import { MoreVertical, CheckCircle2, Clock } from "lucide-react";
+import { MoreVertical, CheckCircle2, Clock, Play, XCircle } from "lucide-react";
 import Badge from "../components/Badge";
 import appointmentsData from "../data/Appointments.json";
+import doctorsData from "../data/Doctors.json";
 
 export default function Appointments() {
   const [statusFilter, setStatusFilter] = useState("All Status");
+  const [doctorFilter, setDoctorFilter] = useState("All Doctors");
   const [appointmentsList, setAppointmentsList] = useState(appointmentsData);
 
   // 2. Fungsi untuk mengubah status berdasarkan ID janji temu
@@ -37,8 +39,12 @@ export default function Appointments() {
 
   // Logika Filtering menggunakan data dari state lokal
   const filteredAppointments = appointmentsList.filter((item) => {
-    if (statusFilter === "All Status") return true;
-    return item.status.toLowerCase() === statusFilter.toLowerCase();
+    const matchesStatus =
+      statusFilter === "All Status" ||
+      item.status.toLowerCase() === statusFilter.toLowerCase();
+    const matchesDoctor =
+      doctorFilter === "All Doctors" || item.doctorName === doctorFilter;
+    return matchesStatus && matchesDoctor;
   });
 
   return (
@@ -48,7 +54,8 @@ export default function Appointments() {
         title="Appointments List"
         breadcrumb={["Dashboard", "Appointments"]}
       >
-        <div className="flex gap-3">
+        <div className="flex gap-3 flex-wrap items-center">
+          {/* Status Filter */}
           <div className="relative group">
             <select
               value={statusFilter}
@@ -57,7 +64,27 @@ export default function Appointments() {
             >
               <option value="All Status">All Status</option>
               <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+            <FaFilter className="absolute left-4 top-1/2 -translate-y-1/2 text-[10px] text-text-soft/50" />
+            <FaChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-text-soft/50 pointer-events-none" />
+          </div>
+
+          {/* Doctor Filter */}
+          <div className="relative group">
+            <select
+              value={doctorFilter}
+              onChange={(e) => setDoctorFilter(e.target.value)}
+              className="appearance-none bg-white border border-border pl-10 pr-10 py-2.5 rounded-xl text-sm font-bold text-text-soft hover:bg-gray-50 transition-all shadow-sm outline-none cursor-pointer focus:ring-4 focus:ring-primary-soft"
+            >
+              <option value="All Doctors">All Doctors</option>
+              {doctorsData.map((doc) => (
+                <option key={doc.id} value={doc.name}>
+                  {doc.name}
+                </option>
+              ))}
             </select>
             <FaFilter className="absolute left-4 top-1/2 -translate-y-1/2 text-[10px] text-text-soft/50" />
             <FaChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-text-soft/50 pointer-events-none" />
@@ -84,7 +111,10 @@ export default function Appointments() {
                   Owner
                 </th>
                 <th className="px-6 py-5 text-[11px] font-black uppercase tracking-widest text-text-soft">
-                  Service
+                  Service & Room
+                </th>
+                <th className="px-6 py-5 text-[11px] font-black uppercase tracking-widest text-text-soft">
+                  Doctor
                 </th>
                 <th className="px-6 py-5 text-[11px] font-black uppercase tracking-widest text-text-soft">
                   Date & Time
@@ -137,17 +167,40 @@ export default function Appointments() {
                     </td>
 
                     <td className="px-6 py-5">
-                      <span className="px-3 py-1.5 bg-bg-main rounded-lg text-[10px] font-black text-text-main border border-border/50 uppercase">
-                        {item.service}
-                      </span>
+                      <div className="flex flex-col gap-1.5 items-start">
+                        <span className="px-3 py-1 bg-bg-main rounded-lg text-[10px] font-black text-text-main border border-border/50 uppercase">
+                          {item.service}
+                        </span>
+                        {item.room && (
+                          <span className="text-[10px] text-text-soft font-bold uppercase tracking-wider flex items-center gap-1">
+                            <span>📍</span> {item.room}
+                          </span>
+                        )}
+                      </div>
+                    </td>
+
+                    <td className="px-6 py-5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-bg-main text-text-main flex items-center justify-center font-poppins font-black text-xs border border-border shadow-sm">
+                          {item.doctorName ? (item.doctorName.replace("drh. ", "").charAt(0)) : "D"}
+                        </div>
+                        <div>
+                          <p className="font-poppins font-bold text-text-main text-sm leading-tight">
+                            {item.doctorName || "Unassigned"}
+                          </p>
+                          <p className="text-[10px] text-text-soft/60 font-bold uppercase tracking-wider mt-0.5">
+                            {item.doctorSpecialization || "General Medicine"}
+                          </p>
+                        </div>
+                      </div>
                     </td>
 
                     <td className="px-6 py-5">
                       <p className="font-black text-text-main text-sm leading-tight">
                         {item.date}
                       </p>
-                      <p className="text-[10px] text-primary font-black uppercase italic tracking-tighter mt-0.5">
-                        Confirmed
+                      <p className="text-[10px] text-text-soft/80 font-bold uppercase mt-0.5 flex items-center gap-1">
+                        <Clock size={10} className="text-primary" /> {item.time || "09:00 AM"}
                       </p>
                     </td>
 
@@ -172,6 +225,15 @@ export default function Appointments() {
                             Pending
                           </DropdownMenuItem>
 
+                          {/* Pilihan Status In Progress */}
+                          <DropdownMenuItem
+                            onClick={() => handleUpdateStatus(item.id, "In Progress")}
+                            className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                          >
+                            <Play size={14} className="text-sky-500 fill-sky-500" />
+                            In Progress
+                          </DropdownMenuItem>
+
                           {/* Pilihan Status Done */}
                           <DropdownMenuItem
                             onClick={() => handleUpdateStatus(item.id, "Done")}
@@ -179,6 +241,15 @@ export default function Appointments() {
                           >
                             <CheckCircle2 size={14} className="text-emerald-500" />
                             Done
+                          </DropdownMenuItem>
+
+                          {/* Pilihan Status Cancelled */}
+                          <DropdownMenuItem
+                            onClick={() => handleUpdateStatus(item.id, "Cancelled")}
+                            className="flex items-center gap-2 cursor-pointer text-text-main text-xs font-bold px-3 py-2 rounded-lg hover:bg-bg-main focus:bg-bg-main outline-none transition-colors"
+                          >
+                            <XCircle size={14} className="text-rose-500" />
+                            Cancelled
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -254,7 +325,7 @@ export default function Appointments() {
                 ))
               ) : (
                 <tr>
-                  <td colSpan="6" className="px-8 py-20 text-center">
+                  <td colSpan="7" className="px-8 py-20 text-center">
                     <p className="text-text-soft font-black uppercase tracking-widest text-xs">
                       No {statusFilter} appointments found.
                     </p>
