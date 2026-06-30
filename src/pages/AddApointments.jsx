@@ -1,4 +1,4 @@
-import { FaCalendarAlt, FaPaw, FaStethoscope, FaClipboardList } from "react-icons/fa";
+import { FaCalendarAlt, FaPaw, FaStethoscope, FaClipboardList, FaArrowLeft } from "react-icons/fa";
 import InputField from "../components/InputField";
 import SelectField from "../components/SelectField";
 import DateField from "../components/DateField";
@@ -28,7 +28,13 @@ export default function AddAppointment() {
       <PageHeader
         title="New Appointment"
         breadcrumb={["Dashboard", "Appointments", "Add"]}
-      />
+      >
+        <NavLink to="/appointments">
+          <button className="flex items-center gap-2 bg-white border border-border text-text-main hover:text-white hover:bg-primary hover:border-primary px-5 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:scale-105 active:scale-95 transition-all uppercase tracking-wider">
+            <FaArrowLeft className="text-xs" /> Back to Appointments
+          </button>
+        </NavLink>
+      </PageHeader>
 
       {/* CARD CONTAINER */}
       <div className="bg-bg-card rounded-[2.5rem] border border-border shadow-soft overflow-hidden">

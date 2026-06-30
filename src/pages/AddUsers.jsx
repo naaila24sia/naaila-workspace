@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaUserPlus, FaUserShield, FaLock, FaEye, FaEyeSlash } from "react-icons/fa"; // Tambah import FaEye & FaEyeSlash
-import { useNavigate } from "react-router-dom";
+import { FaUserPlus, FaUserShield, FaLock, FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa"; // Tambah import FaEye & FaEyeSlash
+import { useNavigate, NavLink } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import SubmitButton from "../components/SubmitButton";
 import { authAPI } from "../services/authAPI";
@@ -102,7 +102,13 @@ export default function AddUsers() {
       <PageHeader
         title="New User Registration"
         breadcrumb={["Dashboard", "Users", "Add"]}
-      />
+      >
+        <NavLink to="/users">
+          <button className="flex items-center gap-2 bg-white border border-border text-text-main hover:text-white hover:bg-primary hover:border-primary px-5 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:scale-105 active:scale-95 transition-all uppercase tracking-wider">
+            <FaArrowLeft className="text-xs" /> Back to Users
+          </button>
+        </NavLink>
+      </PageHeader>
 
       <div className="bg-bg-card rounded-[2.5rem] border border-border shadow-soft overflow-hidden">
         
@@ -233,7 +239,7 @@ export default function AddUsers() {
           <div className="border-t border-border p-8 flex justify-end gap-5">
             <SubmitButton 
               type="secondary" 
-              onClick={() => navigate("/dashboard/users")}
+              onClick={() => navigate("/users")}
               disabled={loading}
             >
               Discard
